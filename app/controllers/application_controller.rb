@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+    protect_from_forgery with: :exception
+
     helper_method :current_user, :logged_in?
 
     def current_user
@@ -12,6 +14,7 @@ class ApplicationController < ActionController::Base
 
     def login(user)
         session[:session_token] = user.reset_session_token!
+        @current_user = user
     end
 
     def logout!
@@ -21,16 +24,9 @@ class ApplicationController < ActionController::Base
     end
 
     def require_logged_in
-        # if !logged_in?
-        #    render json: {message: "please log in"}, satus: 401
-        # end
+        unless current_user
+           render json: {base: "invalid credentials"}, satus: 401
+        end
     end
-
-    def require_logged_out
-        # if logged_in?
-        #     logout!
-        # end
-    end
-
 
 end
