@@ -3,9 +3,9 @@ class Api::UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             login(@user)
-       else
-            render {}    
-       end
+        else
+            render json: {message: "username/email already exists"}, satus: 422    
+        end
     end
 
     def user_params
