@@ -20,7 +20,7 @@ class Signup extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.signup(this.state)
-      .then(() => this.props.history.push('/users'));
+    .then(() => this.props.history.push('/'));
   }
 
   renderErrors() {
@@ -38,36 +38,43 @@ class Signup extends React.Component {
 
   render() {
     return (
-        <div className="session-form">
-        <h2>Please {this.props.formType} or {this.props.navLink}</h2>
-        <p>{this.renderErrors()}</p>
-        <form>
-            <label>Email:
-            <input
-            type="text"
-            value={this.state.email}
-            onChange={this.update('email')}
-            />
-            </label>
+      <div className="signup-form-container">
+        <form onSubmit={this.handleSubmit} className="signup-form-box">
+          <br/>
+          Please {this.props.formType} or {this.props.navLink}
+          {this.renderErrors()}
+          <div className="signup-form">
+            <br/>
             <label>Username:
-            <input
-            type="text"
-            value={this.state.username}
-            onChange={this.update('username')}
-            />
+              <input type="text"
+                value={this.state.username}
+                onChange={this.update('username')}
+                className="signup-input"
+              />
             </label>
+            <br/>
+            <label>Email:
+              <input type="text"
+                value={this.state.email}
+                onChange={this.update('email')}
+                className="signup-input"
+              />
+            </label>
+            <br/>
             <label>Password:
-            <input
-            type="password"
-            value={this.state.password}
-            onChange={this.update('password')}
-            />
-            <button onClick={this.handleSubmit}>Sign Up</button>
+              <input type="password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                className="signup-input"
+              />
             </label>
+            <br/>
+            <input className="session-submit" type="submit" value={this.props.formType} />
+          </div>
         </form>
-        </div>
+      </div>
     );
-    }
+  }
 }
 
 export default Signup;
