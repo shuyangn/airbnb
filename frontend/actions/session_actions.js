@@ -20,8 +20,12 @@ const receiveErrors = errors => ({
 
 export const login = user => dispatch => {
     return SessionApiUtil.login(user)
-      .then(user => dispatch(receiveCurrentUser(user)),
-            error => (dispatch(receiveErrors(error.responseJSON))));
+      .then(user => {
+        dispatch(receiveCurrentUser(user));
+        
+    },
+        error => (dispatch(receiveErrors(error.responseJSON)))
+    );
 };
 
 export const logout = () => dispatch => {
