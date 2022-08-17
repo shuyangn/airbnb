@@ -1,21 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const navBar = ({ currentUser, logout }) => {
+const navBar = (props) => {
+  const { currentUser, logout } = props;
+  
+  const openModal = (formType) => {
+    return e => {
+      e.preventDefault();
+      props.openModal(formType)
+    };
+  };
+
 const display = currentUser ? (
     <div className='welcome-info'>
       <h3>Welcome {currentUser.username}!</h3>
-      <button onClick={logout} className='logout'>Logout</button>
+      <div className="logout-btn" onClick={logout}>Log out</div>
     </div>
   ) : (
-    <div>
-      <Link className="btn" to="/signup">Sign Up</Link>
-      <Link className="btn" to="/login">Log In</Link>
+    <div  className='btn'>
+      <div className="signup-btn" onClick={openModal('signup')}>Sign up</div>
+      <div className="login-btn" onClick={openModal('login')}>Log in</div>
     </div>
   );
   return (
     <header className="nav-bar">
-      <h1 className="logo">ENJOYBNB</h1>
+      <div className='logo-container'>
+        <a className='logo-img' href="#/">
+        </a>
+      </div>
+      
       <div>
         {display}
       </div>
