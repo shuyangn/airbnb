@@ -28,7 +28,6 @@ const display = currentUser ? (
         <a className='logo-img' href="#/">
         </a>
       </div>
-      
       <div>
         {display}
       </div>

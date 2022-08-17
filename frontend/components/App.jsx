@@ -7,13 +7,13 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch } from 'react-router-dom';
 const App = () => (
   <div>
-    <div className="header__container-outer"></div>
+    <div className="dashboard-background"></div>
     <NavBarContainer />
     <ModalContainer />
-    {/* <Switch>
-    <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-    <AuthRoute exact path="/login" component={LogInFormContainer} />
-    </Switch> */}
+    <Switch>
+    {/* <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+    <AuthRoute exact path="/login" component={LogInFormContainer} /> */}
+    </Switch>
   </div>
 );
 

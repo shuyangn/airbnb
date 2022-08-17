@@ -1,7 +1,7 @@
 .form-container {
     background-color: white;
     padding: 2rem;
-    width: 500px;
+    width: 450px;
     position: relative;
     font-family: cereal;
 }
@@ -17,7 +17,7 @@
     bottom: 0;
     right: 0;
     left: 0;
-    background: rgba(146, 146, 146, 0.845);
+    background: rgba(146, 146, 146, 0.527);
     //opacity: 80%;
     z-index: 10;
   }
@@ -31,16 +31,16 @@
   
   .exit-modal {
     display: inline-block;
-  -webkit-text-stroke: 2.7px white;
-  text-align: center;
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
-  box-shadow: 0px 2px 7px rgb(116, 116, 116);
-  cursor: pointer;
+    -webkit-text-stroke: 2.7px white;
+    text-align: center;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 7px rgb(192, 192, 192);
+    cursor: pointer;
   }
   
   .exit-modal img {
@@ -49,47 +49,64 @@
   }
 
 
-
-h1, h2, h3, h4, h5 {
-  font-family: cereal;
-  line-height: 1.3em;
-  font-weight: 700;
-  padding: 0;
-  color: rgb(22, 22, 22);
-}
   
 
 ////////////////////////////////////////////////////
 /// 
 .whole-exit {
   margin-bottom: 0 !important;
+  font-size: 22px;
+  font-family: Cereal;
+  font-weight: 550;
 }
+
+a.form-submit-btn {
+  margin-top: 2rem !important;
+  display: inline-block;
+  text-align: center;
+  background-color: #fff !important;
+  color: #000 !important;
+  border: 1px solid rgb(118, 118, 118);
+  border-radius: 5px;
+  padding: 1rem;
+  width: 92%;
+  font-size: 100;
+  font-weight: 600;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
 
 
 .form-box {
-  padding-bottom: 2rem;
+  padding-bottom: 25px;
   border-bottom: 1px solid rgba(0,0,0,0.1);
   align-items: center;
 }
+
+
 
 .form-input {
   padding: 0.9rem !important;
   font-size: 1.2rem !important;
   margin-bottom: 1.2rem !important;
   font-weight: 300;
+  border-radius: 5px;
+  width: 92%;
+  outline: none;
+  border-color: white;
 }
 
-
-// Modal buttons
 .session-button {
   background-color: #FF5A5F !important;
   padding: 1rem;
-  width: 90%;
+  width: 92%;
   color: #fff !important;
-  font-size: 1.2rem;
+  font-size: 400;
   font-weight: 600;
   border-color: transparent;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 // .session-buttion:active {
@@ -106,23 +123,34 @@ h1, h2, h3, h4, h5 {
   top: 5.2px;
 }
 
-
-
-// Other form section
-.modal__other-form-container {
-  padding-top: 1.5rem;
-  display: flex;
-  color: rgba(0,0,0,0.6);
+.modal__divider-container {
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  position: relative;
+  height: 0;
 }
 
-.modal__account-msg {
-  margin-right: 0.8rem;
-  font-weight: 300;
-  font-size: 1.1rem;
+.modal__divider-content {
+  text-align: center;
+  background-color: #fff;
+  position: relative;
+  top: -0.1rem;
+  display: inline-block;
+  left: 50%;
+  padding: 0.8rem 1rem;
+  transform: translate(-50%, -50%);
+  color: rgb(118, 118, 118) !important;
 }
 
-.modal__btn-other-form {
-  color: rgb(0, 132, 137) !important;
-  font-size: 1.1rem;
-  font-weight: 400;
+.session-form-footer {
+  padding-top: 20px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+a.other-form-link {
+  color: rgb(36, 108, 108);
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 1px solid rgb(36, 108, 108);
 }
