@@ -88,21 +88,22 @@ a.form-submit-btn {
 
 .form-input {
   padding: 0.9rem !important;
-  font-size: 1.2rem !important;
+  font-size: 1rem !important;
   margin-bottom: 1.2rem !important;
   font-weight: 300;
   border-radius: 5px;
   width: 92%;
+  border: 1px solid rgb(118, 118, 118);
   outline: none;
-  border-color: white;
+  font-size: 22px;
 }
 
 .session-button {
   background-color: #FF5A5F !important;
   padding: 1rem;
-  width: 92%;
+  width: 91%;
   color: #fff !important;
-  font-size: 400;
+  font-size: 1.1rem !important;
   font-weight: 600;
   border-color: transparent;
   border-radius: 5px;
@@ -153,4 +154,10 @@ a.other-form-link {
   cursor: pointer;
   font-size: 14px;
   border-bottom: 1px solid rgb(36, 108, 108);
+}
+
+.session-errors {
+  width: 100%;
+  text-align: center;
+  color:#c40000;
 }

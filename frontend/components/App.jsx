@@ -10,10 +10,10 @@ const App = () => (
     <div className="dashboard-background"></div>
     <NavBarContainer />
     <ModalContainer />
-    <Switch>
+
     {/* <AuthRoute exact path="/signup" component={SignUpFormContainer} />
     <AuthRoute exact path="/login" component={LogInFormContainer} /> */}
-    </Switch>
+
   </div>
 );
 

@@ -115,7 +115,6 @@ class Login extends React.Component {
           </div>
 
           <br/>
-          <div className='session-errors'>{this.renderErrors()}</div>
           <div className="form-items">
           <br/>
           <label>
@@ -135,6 +134,8 @@ class Login extends React.Component {
               className="form-input"
               />
           </label>
+          <br/>
+          <div className='session-errors'>{this.renderErrors()}</div>
           <br/>
           <button value={this.props.formType} className="session-button">Log in</button>
           </div>
