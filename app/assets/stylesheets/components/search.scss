@@ -1,0 +1,86 @@
+.bar{
+    background:white;
+    box-shadow: 0px 0px 5px rgb(199, 199, 199);
+    height:55px;
+    border-radius:100vw;
+    display:flex;
+    justify-content:center;
+    font-size:0.6rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .bar div{
+    border-radius:inherit;
+    padding:0.8rem 1.5rem;
+    //transition: background 250ms ease;
+  }
+  
+  .bar div:hover{
+    background:rgb(248, 248, 248);
+  }
+  
+  .location{
+    width:34%;
+  }
+  .check-in, .check-out, .guests{
+    width:22%;
+  }
+  
+  input[type="text"]{
+    background:none;
+    border:none;
+    padding:0.2rem 0 0 0;
+  }
+  
+  input[type="text"]:focus{
+    outline:none;
+  }
+  
+  ::placeholder{
+    font-size:0.75rem;
+  }
+  
+  .guests{
+    position: relative;  
+  }
+  .search-btn button{
+    position:absolute;
+    top:50%;
+    right:10px;
+    transform:translateY(-50%);
+    background:#FF385C;
+    color:white;
+    font-size:0.8rem;
+    padding:0.7rem;
+    border-radius:50%;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .bar>div{
+    position:relative;
+  }
+  
+  
+  .bar>div::before{
+    position:absolute;
+    content:"";
+    left:0;
+    top:50%;
+    transform:translateY(-50%);
+    width:1px;
+    height:55%;
+    background:rgb(234, 234, 234);
+  }
+  
+  .bar>div:nth-of-type(1)::before{
+     background:transparent;
+  }
+  
+  
+  .bar>div:hover::before{
+    background:transparent;
+  }

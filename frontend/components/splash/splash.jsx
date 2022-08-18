@@ -1,28 +1,18 @@
 import React from 'react';
-import nav_bar_container from '../nav_bar/nav_bar_container';
+import NavBarContainer from '../nav_bar/nav_bar_container';
+import ModalContainer from '../modal/modal';
+import SearchBar from '../search/search_bar';
 
-const Landing = props => {
-  return (
-    <div className="header__container-outer">
-      {/* <Header /> */}
-      <div className="header__search-wrapper">
-        <h1 className="header__search-header">
-          Book unique places to stay and things to do.
-        </h1>
-        <div className="header__search-form-wrapper">
-          <SearchBarLandingContainer />
+class Splash extends React.Component {
+    render () {
+      return (
+        <div className="dashboard-background">
+          <NavBarContainer />
+          <ModalContainer />
+          <SearchBar />
         </div>
-      </div>
-      <div className="header__desc-container">
-        <p className="header__desc-content">
-          Introducing Aerbnb Luxe<br />
-          Extraordinary homes<br />
-          with five–star everything
-          </p>
-      </div>
-    </div>
-  );
-}
-
-
-export default Landing;
+      );
+    }
+  }
+  
+  export default Splash;
