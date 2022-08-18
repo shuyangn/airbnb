@@ -25,21 +25,21 @@
   .location{
     width:34%;
   }
-  .check-in, .check-out, .guests{
+  .check-in, .check-out{
     width:22%;
   }
+  .guests {
+    width:14%;
+  }
   
-  input[type="text"]{
+  .bar input[type="text"]{
     background:none;
     border:none;
     padding:0.2rem 0 0 0;
   }
   
-  input[type="text"]:focus{
-    outline:none;
-  }
   
-  ::placeholder{
+  .bar ::placeholder{
     font-size:0.75rem;
   }
   
