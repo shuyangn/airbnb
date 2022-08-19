@@ -1,5 +1,6 @@
 import React from "react";
 import { FaSearch } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 
 class SearchBar extends React.Component {
     render () {
@@ -22,7 +23,9 @@ class SearchBar extends React.Component {
             <input type="text" placeholder="Add guests" />
           </div>
           <div className="search-btn">
+            <Link to = '/rooms'>
             <button><FaSearch /></button>
+            </Link>
           </div>
         </div>
       );

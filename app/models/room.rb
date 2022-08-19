@@ -18,5 +18,7 @@
 class Room < ApplicationRecord
     validates: :lat, :long, :description, :max_guests, :num_beds, :num_baths, :price, :city, presence: true
 
+    def average_rating
+    end
     
 end

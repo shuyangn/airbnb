@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { FaAirbnb } from 'react-icons/fa';
 const navBar = (props) => {
   const { currentUser, logout } = props;
   
@@ -24,7 +24,7 @@ const display = currentUser ? (
   return (
     <header className="nav-bar">
       <div className='logo-container'>
-        <a className='logo-img' href="#/">
+        <a className='logo-img' href="#/"><FaAirbnb style={{color: 'white', fontSize: '41px'}} />
         </a>
       </div>
       <div>

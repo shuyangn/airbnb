@@ -1,7 +1,14 @@
 class Api::RoomsController < ApplicationController
-    def index
-    end
+    before_action :require_logged_in, only: [:index, :show]
 
-    def create 
-    end
+  def index
+    @rooms = Room.all
+    render :index
+  end
+
+  def show
+    @room = Room.find(params[:id])
+  end
+
+
 end

@@ -1,0 +1,60 @@
+.nav-bar2 {
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 0 0 0;
+    padding: 0 5%;
+    border-bottom: 1px solid #dbdbdb ;
+}
+
+
+// .logo-img {
+//     background-image: url(aribnb_white.jpg);
+//     height: 40px;
+//     width: 40px;
+//     background-size: contain;
+//     display: block;
+//     cursor: pointer;
+// }
+
+.welcome-info2 {
+    display: flex;
+}
+.welcome-info2 h3{
+    margin: 0px 7px;
+    color: black;
+    text-decoration: none;
+    padding: 14px 5.6px;
+    font-size: 16px;
+    border-bottom: 2px solid transparent;
+    font-family: cereal;
+}
+
+.logout-btn2 {
+    margin: 0px 14px;
+    color: black;
+    text-decoration: none;
+    padding: 14px 5.6px;
+    cursor: pointer;
+    font-size: 16px;
+    border-bottom: 2px solid transparent;
+    font-family: cereal;
+}
+
+.logout-btn2:hover {
+    border-bottom: 2px solid black;
+}
+
+.nav-bar-search-bar{
+    display: center;
+    transform: scale(0.8, 0.8);
+  -ms-transform: scale(0.8, 0.8); /* IE 9 */
+  -webkit-transform: scale(0.8, 0.8); /* Safari and Chrome */
+  -o-transform: scale(0.8, 0.8); /* Opera */
+  -moz-transform: scale(0.8, 0.8); /* Firefox */
+}

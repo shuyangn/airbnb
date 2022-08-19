@@ -1,6 +1,6 @@
 .nav-bar {
     display: flex;
-    height: 85px;
+    height: 80px;
     justify-content: space-between;
     align-items: center;
     position: fixed;
@@ -8,7 +8,7 @@
     left: 0;
     right: 0;
     margin: 0 0 0 0;
-    padding: 5px 11.2px 14px 21px;
+    padding: 0 5%;
 }
 
 .btn {
@@ -45,19 +45,41 @@
     border-bottom: 2px solid white;
 }
 
-.nav-bar-title {
+
+
+// .logo-img {
+//     // background-image: url(aribnb_white.jpg);
+//     // height: 40px;
+//     // width: 40px;
+//     // background-size: contain;
+//     // display: block;
+//     // cursor: pointer;
+// }
+
+.welcome-info {
+    display: flex;
+}
+.welcome-info h3{
+    margin: 0px 7px;
+    color: white;
     text-decoration: none;
-    padding-left: 20px;
-    cursor: pointer;
+    padding: 14px 5.6px;
+    font-size: 16px;
+    border-bottom: 2px solid transparent;
+    font-family: cereal;
 }
 
-.logo-img {
-    background-image: url(aribnb_white.jpg);
-    height: 40px;
-    width: 40px;
-    background-size: contain;
-    display: block;
+.logout-btn {
+    margin: 0px 14px;
+    color: white;
+    text-decoration: none;
+    padding: 14px 5.6px;
     cursor: pointer;
+    font-size: 16px;
+    border-bottom: 2px solid transparent;
+    font-family: cereal;
 }
 
-
+.logout-btn:hover {
+    border-bottom: 2px solid white;
+}
