@@ -16,9 +16,7 @@
 #  updated_at  :datetime         not null
 #
 class Room < ApplicationRecord
-    validates: :lat, :long, :description, :max_guests, :num_beds, :num_baths, :price, :city, presence: true
+    validates :lat, :long, :description, :max_guests, :num_beds, :num_baths, :price, :city, presence: true
 
-    def average_rating
-    end
-    
+    has_one_attached :photo
 end
