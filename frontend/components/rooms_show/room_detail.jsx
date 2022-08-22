@@ -6,7 +6,7 @@ const RoomDetail = ({ room }) => {
   return (
     <div>
       <ul className="room-list">
-        {/* <img className="index-image" src={room.image_urls}/> */}
+        <img className="show-page-img" src={window.house}/>
         <li>Price: {room.price}</li>
         <li>Description: {room.description}</li>
         <li>max_guests: {room.max_guests}</li>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaAirbnb } from 'react-icons/fa';
 import SearchBar from '../search/search_bar';
+import { Link } from "react-router-dom";
 
 const NavBar2 = (props) => {
   const { currentUser, logout } = props;
@@ -14,12 +15,15 @@ const NavBar2 = (props) => {
         </a>
       </div>
       <div className='nav-bar-search-bar'>
-        <SearchBar />
+      <SearchBar
+        // maxGuest={maxGuest}
+        // updateFilter={updateFilter}
+      />
       </div>
 
       <div className='welcome-info2'>
           <h3>Welcome {currentUser.username}!</h3>
-          <div className="logout-btn2" onClick={logout}>Log out</div>
+          <Link to = '/' style={{textDecoration:'none'}}><div className="logout-btn2" onClick={logout}>Log out</div></Link>
       </div>
     </header>
   )

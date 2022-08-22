@@ -2,9 +2,12 @@ import React from "react";
 import { FaSearch } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 
-class SearchBar extends React.Component {
-    render () {
-      return (
+const handleChange = (filter, updateFilter) => e => (
+  updateFilter(filter, parseInt(e.currentTarget.value))
+);
+
+// const SearchBar = ({  maxGuest, updateFilter }) => (
+const SearchBar = () => (
         <div className="bar">
           <div className="location">
             <p>Location</p>
@@ -20,16 +23,18 @@ class SearchBar extends React.Component {
           </div>
           <div className="guests">
             <p>Guests</p>
-            <input type="text" placeholder="Add guests" />
+            <input
+             type="number"
+            //  value={maxGuest}
+            //  onChange={handleChange('maxGuest', updateFilter)}
+            />
           </div>
           <div className="search-btn">
             <Link to = '/rooms'>
-            <button><FaSearch /></button>
+            <button><FaSearch style={{'fontSize': '17px'}}/></button>
             </Link>
           </div>
         </div>
-      );
-    }
-  }
+  );
 
   export default SearchBar;
