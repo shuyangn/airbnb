@@ -9,7 +9,6 @@ const RoomIndex = ({ rooms }) => (
         {/* <NavBar2Container />
         <FakeFilter /> */}
     <div className="index_page_all_rooms">
-      <h1>Rooms: </h1>
       {rooms.map(room => (
         <RoomIndexItem
           room={room}

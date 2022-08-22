@@ -4,9 +4,8 @@ class Api::RoomsController < ApplicationController
   def index
     rooms = Room.all
 
-    if params[:minGuest] && params[:maxGuest]
+    if params[:maxGuest]
       rooms = rooms.where("max_guests > ?", params[:maxGuest])
-      # rooms = rooms.where(max_guests: guest_range)
     end
     @rooms = rooms
 
@@ -17,9 +16,4 @@ class Api::RoomsController < ApplicationController
     @room = Room.find(params[:id])
   end
 
-  private
-  
-  def guest_range
-    (params[:minGuest]..params[:maxGuest])
-  end
 end

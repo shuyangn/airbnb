@@ -6,7 +6,6 @@ import Search from './search';
 
 const mapStateToProps = state => ({
   rooms: asArray(state.entities),
-  minGuest: state.ui.filters.minGuest,
   maxGuest: state.ui.filters.maxGuest
 });
 
