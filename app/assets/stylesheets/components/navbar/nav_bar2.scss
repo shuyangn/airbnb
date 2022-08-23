@@ -13,15 +13,39 @@
     background-color: white;
 }
 
+.btn2 {
+    display: flex;
+}
 
-// .logo-img {
-//     background-image: url(aribnb_white.jpg);
-//     height: 40px;
-//     width: 40px;
-//     background-size: contain;
-//     display: block;
-//     cursor: pointer;
-// }
+.signup-btn2 {
+    margin: 0px 14px;
+    color: black;
+    text-decoration: none;
+    padding: 14px 5.6px;
+    cursor: pointer;
+    font-size: 16px;
+    border-bottom: 2px solid transparent;
+    font-family: cereal;
+}
+
+.login-btn2 {
+    margin: 0px 14px;
+    color: black;
+    text-decoration: none;
+    padding: 14px 5.6px;
+    cursor: pointer;
+    font-size: 16px;
+    border-bottom: 2px solid transparent;
+    font-family: cereal;
+}
+
+.signup-btn2:hover {
+    border-bottom: 2px solid black;
+}
+
+.login-btn2:hover {
+    border-bottom: 2px solid black;
+}
 
 .welcome-info2 {
     display: flex;

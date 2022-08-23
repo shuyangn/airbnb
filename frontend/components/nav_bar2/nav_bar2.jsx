@@ -3,9 +3,29 @@ import { FaAirbnb } from 'react-icons/fa';
 import SearchBar from '../search/search_bar';
 import { Link } from "react-router-dom";
 
+
 const NavBar2 = (props) => {
   const { currentUser, logout } = props;
-  
+
+  const openModal = (formType) => {
+    return e => {
+      e.preventDefault();
+      props.openModal(formType)
+    };
+  };
+
+  const display = currentUser ? (
+    <div className='welcome-info2'>
+      <h3>Welcome {currentUser.username}!</h3>
+      <div className="logout-btn2" onClick={logout}>Log out</div>
+    </div>
+  ) : (
+    <div  className='btn2'>
+      <div className="signup-btn2" onClick={openModal('signup')}>Sign up</div>
+      <div className="login-btn2" onClick={openModal('login')}>Log in</div>
+    </div>
+  );
+
 
   return (
     <header className="nav-bar2">
@@ -21,9 +41,8 @@ const NavBar2 = (props) => {
       />
       </div>
 
-      <div className='welcome-info2'>
-          <h3>Welcome {currentUser.username}!</h3>
-          <Link to = '/' style={{textDecoration:'none'}}><div className="logout-btn2" onClick={logout}>Log out</div></Link>
+      <div>
+        {display}
       </div>
     </header>
   )

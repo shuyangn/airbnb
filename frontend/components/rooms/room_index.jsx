@@ -2,8 +2,20 @@ import React from "react";
 import RoomIndexItem from './room_index_item';
 
 
-const RoomIndex = ({ rooms }) => (
-    <div className="index_page">
+class RoomIndex extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    this.props.updateFilter();
+  }
+
+  render() {
+    const { rooms } = this.props;
+
+    return (
+      <div className="index_page">
     <div className="index_page_all_rooms">
       {rooms.map(room => (
         <RoomIndexItem
@@ -13,6 +25,8 @@ const RoomIndex = ({ rooms }) => (
       ))}
     </div>
     </div>
-  );
+    )
+  }
+}
   
 export default RoomIndex;

@@ -1,25 +1,23 @@
 import React from 'react';
 import FilterForm from './filter_form';
-import SearchBar from '../search/search_bar';
 
 import RoomIndex from './room_index';
 import NavBar2Container from "../nav_bar2/nav_bar2_container";
+import ModalContainer from '../modal/modal';
 import FakeFilter from '../fake_filter/fake_filter';
 
 const Search = ({ rooms, maxGuest, updateFilter }) => (
   <div className="user-pane">
         <NavBar2Container />
+        <ModalContainer />
         <FakeFilter />
     <div className="rooms-sidebyside">
       <FilterForm
         maxGuest={maxGuest}
         updateFilter={updateFilter}
       />
-      {/* <SearchBar
-        maxGuest={maxGuest}
-        updateFilter={updateFilter}
-      /> */}
-      <RoomIndex rooms={rooms} />
+      <RoomIndex rooms={rooms} updateFilter={updateFilter} />
+
     </div>
   </div>
 );
