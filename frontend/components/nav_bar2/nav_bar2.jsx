@@ -36,8 +36,8 @@ const NavBar2 = (props) => {
       </div>
       <div className='nav-bar-search-bar'>
       <SearchBar
-        // maxGuest={maxGuest}
-        // updateFilter={updateFilter}
+        maxGuest={props.maxGuest}
+        updateFilter={props.updateFilter}
       />
       </div>
 

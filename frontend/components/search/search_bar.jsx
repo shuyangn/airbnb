@@ -6,8 +6,7 @@ const handleChange = (filter, updateFilter) => e => (
   updateFilter(filter, parseInt(e.currentTarget.value))
 );
 
-// const SearchBar = ({  maxGuest, updateFilter }) => (
-const SearchBar = () => (
+const SearchBar = ({  maxGuest, updateFilter }) => (
         <div className="bar">
           <div className="location">
             <p>Location</p>
@@ -25,8 +24,8 @@ const SearchBar = () => (
             <p>Guests</p>
             <input
              type="number"
-            //  value={maxGuest}
-            //  onChange={handleChange('maxGuest', updateFilter)}
+             value={maxGuest}
+             onChange={handleChange('maxGuest', updateFilter)}
             />
           </div>
           <div className="search-btn">

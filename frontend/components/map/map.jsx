@@ -3,12 +3,6 @@ import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router-dom';
 
 
-// const mapOptions = {
-//   center: { lat: 37.773972, lng: -122.431297 }, 
-//   zoom: 13
-// };
-
-
 
 class RoomMap extends React.Component {
   constructor(props) {
@@ -18,7 +12,7 @@ class RoomMap extends React.Component {
   componentDidMount() {
     this.props.fetchRoom(this.props.roomId).then(({room}) => {
       const mapOptions = {
-        center:{ lat: room.lat, lng: room.long },
+        center:{ lat: room.room.lat, lng: room.room.long },
         zoom: 13
       };
 

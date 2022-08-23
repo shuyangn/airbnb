@@ -6,24 +6,43 @@ import { ProtectedRoute } from '../../util/route_util';
 import NavBar2Container from "../nav_bar2/nav_bar2_container";
 import RoomMap from '../map/map';
 
-const RoomShow = ({ room, roomId, fetchRoom }) => {
+class RoomShow extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-  return(
-    <div className="single-room-show">
-      <NavBar2Container />
-        <Link to="/rooms">Back to Index</Link>
+
+  componentDidMount() {
+    {console.log(this.props)}
+    this.props.fetchRoom(
+      this.props.roomId
+    );
+  }
+
+
+  render() {
+    const{ room, roomId, fetchRoom } = this.props;
+
+    return(
+      <div className="single-room-show">
+        <NavBar2Container />
+          <Link to="/rooms">Back to Index</Link>
+          
+        <div className="all-room-details">
+          <RoomDetail room={room} />
+        </div>
         <div className="single-room-map">
-        <RoomMap
-          room={room}
-          roomId={roomId}
-          fetchRoom={fetchRoom}
-        />
+          <RoomMap
+            roomId={roomId}
+            fetchRoom={fetchRoom}
+          />
+        </div>
       </div>
-      <div className="right-half room-details">
-        <RoomDetail room={room} />
-      </div>
-    </div>
-  );
-};
+    );
+
+  }
+
+}
+
 
 export default RoomShow;
