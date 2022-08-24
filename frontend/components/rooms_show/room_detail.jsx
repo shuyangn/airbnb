@@ -1,18 +1,20 @@
 import React from 'react';
-import { AiFillStar } from "react-icons/ai";
+import { AiFillStar, AiOutlineWifi } from "react-icons/ai";
 import { BsFillPersonFill, BsDoorOpen } from "react-icons/bs";
 import { FiShare, FiHeart, FiCalendar} from "react-icons/fi";
-import { GiDesk } from "react-icons/gi";
+import { GiDesk, GiComputerFan, GiToothbrush } from "react-icons/gi";
+import { BiBath } from "react-icons/bi";
+import { MdOutlineDryCleaning, MdOutlineLocalLaundryService, MdOutlineMicrowave, MdOutlineElevator } from "react-icons/md";
 
 const RoomDetail = ({ room }) => {
   return (
     <div className='room-detail-all'>
       <div className='room-detail-title'>
-        <p>A Big House | Just a Big House.</p>
+        <p>A Big House | Just a Big House</p>
       </div>
       <div className='room-detail-title-below-info'>
-        <div><AiFillStar /> 4.97 <BsFillPersonFill /> Superhost · {room.city}</div>
-        <div><FiShare /> Share  <FiHeart /> Save </div>
+        <div className='room-detail-title-below-info-left'><AiFillStar /> 4.97 <BsFillPersonFill /> Superhost · {room.city}</div>
+        <div className='room-detail-title-below-info-right'><FiShare /> Share  <FiHeart /> Save </div>
       </div>
 
       <div className='room-detail-images'>
@@ -60,7 +62,7 @@ const RoomDetail = ({ room }) => {
             <div className='detail-pros-item'>
               <div className='detail-pros-item-comp'><FiCalendar /></div>
               <div className='detail-pros-item-words'>
-                <p className='detail-pros-item-words-line1'>Free cancellation 3 days before check-in</p>
+                <p className='detail-pros-item-words-line1'>Free cancellation 1 year before check-in</p>
               </div>
             </div>
           </div>
@@ -73,6 +75,46 @@ const RoomDetail = ({ room }) => {
           <div className='detail-description'>
             <p> {room.description} </p>
           </div>
+
+          <div className='detail-place-offers'>
+            <div className='detail-place-offers-title'>
+              <p>What this place offers</p>
+            </div>
+            <div className='detail-place-offers-items'>
+              <div className='detail-place-offers-item'>
+                <div className='detail-place-offers-item-comp'><BiBath /></div>
+                <div className='detail-place-offers-item-word'>Giant bath</div>
+              </div>
+              <div className='detail-place-offers-item'>
+                <div className='detail-place-offers-item-comp'><MdOutlineDryCleaning /></div>
+                <div className='detail-place-offers-item-word'>Giant hangers</div>
+              </div>
+              <div className='detail-place-offers-item'>
+                <div className='detail-place-offers-item-comp'><MdOutlineLocalLaundryService /></div>
+                <div className='detail-place-offers-item-word'>Giant washer</div>
+              </div>
+              <div className='detail-place-offers-item'>
+                <div className='detail-place-offers-item-comp'><GiComputerFan /></div>
+                <div className='detail-place-offers-item-word'>Giant fan</div>
+              </div>
+              <div className='detail-place-offers-item'>
+                <div className='detail-place-offers-item-comp'><GiToothbrush /></div>
+                <div className='detail-place-offers-item-word'>Giant essentials</div>
+              </div>
+              <div className='detail-place-offers-item'>
+                <div className='detail-place-offers-item-comp'><MdOutlineMicrowave /></div>
+                <div className='detail-place-offers-item-word'>Giant microwave</div>
+              </div>
+              <div className='detail-place-offers-item'>
+                <div className='detail-place-offers-item-comp'><AiOutlineWifi /></div>
+                <div className='detail-place-offers-item-word'>Poor WiFi</div>
+              </div>
+              <div className='detail-place-offers-item'>
+                <div className='detail-place-offers-item-comp'><MdOutlineElevator /></div>
+                <div className='detail-place-offers-item-word'>Giant elevator</div>
+              </div>             
+            </div>
+          </div>
         </div>
 
 
@@ -82,20 +124,6 @@ const RoomDetail = ({ room }) => {
           <p>bye</p>
         </div>
       </div>
-
-
-
-
-      <ul className="room-list">
-        <li>Price: {room.price}</li>
-        <li>Description: {room.description}</li>
-        <li>max_guests: {room.max_guests}</li>
-        <li>num_beds: {room.num_beds}</li>
-        <li>num_baths: {room.num_baths}</li>
-        <li>city: {room.city}</li>
-        <li>Latitude: {room.lat}</li>
-        <li>Longitude: {room.long}</li>
-      </ul>
     </div>
   );
 };
