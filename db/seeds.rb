@@ -11,7 +11,7 @@ User.delete_all
 demo_user = User.create!(username:'Guest', email: 'guest@email.com', password:'112233')
 
 Room.delete_all
-room1 = Room.create!(lat:40.73633, long: -73.99383, description: 'sleep well', max_guests: 20, num_beds: 20, num_baths: 3, price: 230, city: 'New York', image_urls: ['https://c2.staticflickr.com/4/3035/2309664044_486f5a0327_z.jpg?zz=1'])
+room1 = Room.create!(lat:40.73633, long: -73.99383, description: 'This course was crafted to provide you with a fully immersive in-person experience! Not only will you get exposure to what a real tech start-up space feels like, with our office-like classroom design, you will also enjoy easy access to live resources and interactive lectures.', max_guests: 20, num_beds: 20, num_baths: 3, price: 230, city: 'New York', image_urls: ['https://c2.staticflickr.com/4/3035/2309664044_486f5a0327_z.jpg?zz=1'])
 room2 = Room.create!(lat:31.20260, long: 121.44025, description: 'eat well', max_guests: 6, num_beds: 6, num_baths: 3, price: 880, city: 'Shanghai', image_urls: ['http://www.concretedecor.net/CD/assets/Image/archives/CD1405/1405i_Page_32_Image_0001_600.jpg'])
 room3 = Room.create!(lat:36.66132, long: 117.02129, description: 'hi', max_guests: 7, num_beds: 20, num_baths: 3, price: 270, city: 'Jinan', image_urls: ['https://c2.staticflickr.com/4/3035/2309664044_486f5a0327_z.jpg?zz=1'])
 room4 = Room.create!(lat:39.97577, long: 116.35186, description: 'Accessible pet friendly waterfront A-line with breathtaking views only 50 feet from lake.', max_guests: 5, num_beds: 20, num_baths: 3, price: 280, city: 'Beijing', image_urls: ['http://www.concretedecor.net/CD/assets/Image/archives/CD1405/1405i_Page_32_Image_0001_600.jpg'])

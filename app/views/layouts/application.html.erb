@@ -10,7 +10,8 @@
     <%#window image assets%>
 
     <script type="text/javascript">
-      window.house = "<%= image_url('house.jpg') %>"
+      window.house = "<%= image_url('house.jpg') %>";
+      window.donald_duck = "<%= image_url('donald_duck.jpg') %>";
     </script>
 
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['MAPS_API_KEY']}" %>

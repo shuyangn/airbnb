@@ -13,10 +13,7 @@ class RoomShow extends React.Component {
 
 
   componentDidMount() {
-    {console.log(this.props)}
-    this.props.fetchRoom(
-      this.props.roomId
-    );
+    this.props.fetchRoom(this.props.roomId);
   }
 
 
@@ -29,7 +26,7 @@ class RoomShow extends React.Component {
           <Link to="/rooms">Back to Index</Link>
           
         <div className="all-room-details">
-          <RoomDetail room={room} />
+          <RoomDetail room={room ? room : ''} />
         </div>
         <div className="single-room-map">
           <RoomMap
