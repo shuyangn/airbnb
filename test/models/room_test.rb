@@ -11,9 +11,10 @@
 #  num_baths   :integer          not null
 #  price       :integer          not null
 #  city        :string           not null
-#  image_urls  :string           default([]), is an Array
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  country     :string           not null
+#  title       :string           not null
 #
 require 'test_helper'
 

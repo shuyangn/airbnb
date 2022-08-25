@@ -10,9 +10,94 @@ User.delete_all
 
 demo_user = User.create!(username:'Guest', email: 'guest@email.com', password:'112233')
 
+ 
 Room.delete_all
-room1 = Room.create!(lat:40.73633, long: -73.99383, description: 'This course was crafted to provide you with a fully immersive in-person experience! Not only will you get exposure to what a real tech start-up space feels like, with our office-like classroom design, you will also enjoy easy access to live resources and interactive lectures.', max_guests: 20, num_beds: 20, num_baths: 3, price: 230, city: 'New York', image_urls: ['https://c2.staticflickr.com/4/3035/2309664044_486f5a0327_z.jpg?zz=1'])
-room2 = Room.create!(lat:31.20260, long: 121.44025, description: 'eat well', max_guests: 6, num_beds: 6, num_baths: 3, price: 880, city: 'Shanghai', image_urls: ['http://www.concretedecor.net/CD/assets/Image/archives/CD1405/1405i_Page_32_Image_0001_600.jpg'])
-room3 = Room.create!(lat:36.66132, long: 117.02129, description: 'hi', max_guests: 7, num_beds: 20, num_baths: 3, price: 270, city: 'Jinan', image_urls: ['https://c2.staticflickr.com/4/3035/2309664044_486f5a0327_z.jpg?zz=1'])
-room4 = Room.create!(lat:39.97577, long: 116.35186, description: 'Accessible pet friendly waterfront A-line with breathtaking views only 50 feet from lake.', max_guests: 5, num_beds: 20, num_baths: 3, price: 280, city: 'Beijing', image_urls: ['http://www.concretedecor.net/CD/assets/Image/archives/CD1405/1405i_Page_32_Image_0001_600.jpg'])
-room5 = Room.create!(lat:22.35400, long: 113.51936, description: 'uic -- so expensive', max_guests: 4, num_beds: 4, num_baths: 2, price: 1800, city: 'Zhuhai', image_urls: ['https://a0.muscache.com/im/pictures/miso/Hosting-46695796/original/a0965aa5-3907-466e-b727-0900e2a7e8c7.jpeg?im_w=1200'])
+room1 = Room.create!(lat:41.94321, long: -73.83224, description: 'Unique experience, secluded.
+Enjoy a weekend or a few days eco-friendly retreat in an architectural, geometric masterpiece on 30 preserved acres just minutes from all that Rhinebeck and the Hudson Valley have to offer.
+The house is an open plan, and though it has zero bedrooms, it can sleep 3!', max_guests: 4, num_beds: 2, num_baths: 2, price: 475, city: 'Rhinbeck, New York', country: 'United States', title: 'Architectural wonder in the woods')
+r1p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room1_1.jpg")
+room1.photo.attach(io:r1p1, filename: 'bnb/room1_1.jpg')
+
+
+
+room2 = Room.create!(lat:41.53515, long: -74.22328, description: 'Reconnect with nature at this unforgettable escape. Located in the Hudson Valley, The Step is a little piece of paradise built on 78 acres of operating farm land near the Walkill River. It is an off the grid glamping experience equipped with the luxury of a queen size memory foam mattress for a good nights sleep. The Step is a secluded get away where you can explore our farm land, show off your scrabble skills, gaze at the stars, and be woken up by the sun through your windows', 
+ max_guests: 2, num_beds: 1, num_baths: 1, price: 180, city: 'Montgomery, New York', country: 'United States', title: 'The Step, a Quaint Cozy A-Frame, on a Farm + River')
+r2p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room2_1.jpg")
+room2.photo.attach(io:r2p1, filename: 'bnb/room2_1.jpg')
+
+
+
+
+room3 = Room.create!(lat:46.98090, long: -71.25399, description: 'The "MICA", high-end micro-housing located in the heart of the "Maelström" recreational-forestry area. Live the immersive experience of a boreal nature just 25 minutes from Old Quebec. Enjoy panoramic views of Laurentian Park as well as breathtaking sunsets at the highest peak of Lac-Beauport. Discover the unique topography of the mountain by exploring the some 20km of trails accessible in any season.',
+ max_guests: 4, num_beds: 4, num_baths: 1, price: 308, city: 'Lac-Beauport, Quebec', country: 'Canada', title: 'MICA (Chalets Micro-Element) CITQ 303134')
+r3p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room3_1.jpg")
+room3.photo.attach(io:r3p1, filename: 'bnb/room3_1.jpg')
+
+
+
+
+room4 = Room.create!(lat:46.19463, long: -74.67315, description: 'Located in a private domain 8 minutes from Tremblant Station and 5 minutes from Lac Mercier, the XO Tremblant is an urban oasis in the heart of nature. Perched on a rock, the chalet offers a modern decor away from the neighborhood. The chalet is connected by Bell Fibe with high speed internet for teleworkers and fans of streaming TV.',
+ max_guests: 14, num_beds: 6, num_baths: 5, price: 721, city: 'La Conception, Quebec', country: 'Canada', title: 'Chalet XO Tremblant - 5 bedrooms wt private bathroom, spa, sauna and rooftop')
+r4p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room4_1.jpg")
+room4.photo.attach(io:r4p1, filename: 'bnb/room4_1.jpg')
+
+
+
+room5 = Room.create!(lat:45.81555, long: -74.22976, description: 'Located near Fiddler Lake, the Blue Moose is a luxurious log cabin offering all the attractions you need for a perfect getaway. Decorated according to the latest trends and built on a large piece of natural land, this chalet features an abundance of windows overlooking the incredible surrounding forest. The log cabin of your dreams!',
+ max_guests: 10, num_beds: 6, num_baths: 2, price: 485, city: 'Mille-Isles, Quebec', country: 'Canada', title: 'BLUE MOOSE | spa, sauna and lake access - Citq: 272661')
+r5p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room5_1.jpg")
+room5.photo.attach(io:r5p1, filename: 'bnb/room5_1.jpg')
+
+
+
+
+room6 = Room.create!(lat:65.68006, long: -18.03447, description: 'Architectural house in north Iceland.
+ This is one of the apartments in Villa Lola, located in Vaðlaheiði near Akureyri, the capital of north Iceland.
+ The villa is located in the exclusive residence area of Akureyri. This location offers you a quiet atmosphere and a touch of the nature. You will have a view over the bay and Akureyri . In the winter time you can enjoy the aurora borealis and in the summer time the midnight sun.',
+ max_guests: 4, num_beds: 3, num_baths: 1, price: 158, city: 'Akureyri, Northeast', country: 'Iceland', title: 'Amazing view - Moderne apartment')
+r6p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room6_1.jpg")
+room6.photo.attach(io:r6p1, filename: 'bnb/room6_1.jpg')
+
+
+
+room7 = Room.create!(lat:63.84330, long: -20.38771, description: 'We are located on a lava desert in the south of Iceland. 5 minutes from the small town of Hella, close to all the popular attractions that southern Iceland has to offer, but also in a secret and secluded location.',
+ max_guests: 2, num_beds: 1, num_baths: 1, price: 581, city: 'Hella', country: 'Iceland', title: 'Glass cottage with Hot tub "Blár"')
+r7p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room7_1.jpg")
+room7.photo.attach(io:r7p1, filename: 'bnb/room7_1.jpg')
+
+
+
+room8 = Room.create!(lat:47.25518, long: 1.34217, description: 'Welcome to the Grotte du Moulin !
+This natural loft is embedded in a limestone block and will surprise you with its irregularity.
+It consists of a large kitchen open to the living room and a bedroom with bathroom separated by a sliding garage door.',
+ max_guests: 4, num_beds: 3, num_baths: 1, price: 114, city: 'Noyers-sur-Cher, Centre-Val de Loire', country: 'France', title: 'La Grotte du Moulin de la Motte Baudoin')
+r8p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room8_1.jpg")
+room8.photo.attach(io:r8p1, filename: 'bnb/room8_1.jpg')
+
+
+
+
+
+room9 = Room.create!(lat:42.34445, long: 3.20739, description: 'Beautiful 4 bedroom architecturally designed villa, with infinity pool and floor to ceiling views in almost every room of the sea and Cap de Creus national park, in beautiful working fishing village in Northern Spain.
+The house has been featured in the New York Times and in Wallpaper.',
+  max_guests: 10, num_beds: 5, num_baths: 3, price: 348, city: 'El Port de la Selva, Catalonia', country: 'Spain', title: 'Sunflower House')
+r9p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room9_1.jpg")
+room9.photo.attach(io:r9p1, filename: 'bnb/room9_1.jpg')
+
+
+
+room10 = Room.create!(lat:44.88318, long: 4.19888, description: 'Charming wood and stone thatched cottage nestled on the South slopes of Mont Mézenc, near Gerbier de Jonc (where the source of the Loire river is located), in the Borée district of Ardèche, 8 mins from the ski resort of Les Estables.
+An outstanding location!',
+  max_guests: 3, num_beds: 2, num_baths: 1, price: 64, city: 'Borée, Rhône-Alpes', country: 'France', title: 'Thatched cottage surrounded by nature')
+r10p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room10_1.jpg")
+room10.photo.attach(io:r10p1, filename: 'bnb/room10_1.jpg')
+
+
+
+
+room11 = Room.create!(lat:45.91071, long: 9.13072, description: 'The villa is located foot dans l \'eau on the lake in the old town of Brienno, a small village 17 km north of Como and 7 km from the highway
+The property is a beautifully restored 17th-century silk spinning mill. Stone coverings, high vaulted ceilings, and an antique chimney alternate with chic industrial interiors and contemporary artwork in a perfect, sophisticated mix.
+Large windows offer stunning views of the lake.',
+  max_guests: 8, num_beds: 6, num_baths: 5, price: 1990, city: 'Brienno, Lombardia', country: 'Italy', title: 'Filanda "Waterfront" On Lake Como')
+r11p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room11_1.jpg")
+room11.photo.attach(io:r11p1, filename: 'bnb/room11_1.jpg')

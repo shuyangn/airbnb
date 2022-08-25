@@ -12,7 +12,7 @@ class RoomMap extends React.Component {
   componentDidMount() {
     this.props.fetchRoom(this.props.roomId).then(({room}) => {
       const mapOptions = {
-        center:{ lat: room.room.lat, lng: room.room.long },
+        center:{ lat: room.lat, lng: room.long },
         zoom: 13
       };
 

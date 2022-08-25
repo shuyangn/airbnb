@@ -22,9 +22,7 @@ class RoomShow extends React.Component {
 
     return(
       <div className="single-room-show">
-        <NavBar2Container />
-          <Link to="/rooms">Back to Index</Link>
-          
+        <NavBar2Container />          
         <div className="all-room-details">
           <RoomDetail room={room ? room : ''} />
         </div>

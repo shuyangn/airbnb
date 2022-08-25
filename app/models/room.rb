@@ -11,12 +11,18 @@
 #  num_baths   :integer          not null
 #  price       :integer          not null
 #  city        :string           not null
-#  image_urls  :string           default([]), is an Array
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  country     :string           not null
+#  title       :string           not null
 #
 class Room < ApplicationRecord
-    validates :lat, :long, :description, :max_guests, :num_beds, :num_baths, :price, :city, presence: true
+    validates :lat, :long, :description, :max_guests, :num_beds, :num_baths, :price, :city, :country, :title, presence: true
 
     has_one_attached :photo
+
+    has_many :reservations,
+     primary_key: :id,
+     foreign_key: :room_id,
+     class_name: :Reservation
 end

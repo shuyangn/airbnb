@@ -10,10 +10,10 @@ const RoomDetail = ({ room }) => {
   return (
     <div className='room-detail-all'>
       <div className='room-detail-title'>
-        <p>A Big House | Just a Big House</p>
+        <p>{room.title}</p>
       </div>
       <div className='room-detail-title-below-info'>
-        <div className='room-detail-title-below-info-left'><AiFillStar /> 4.97 <BsFillPersonFill /> Superhost · {room.city}</div>
+        <div className='room-detail-title-below-info-left'><AiFillStar /> 4.97 <BsFillPersonFill /> Superhost · {room.city}, {room.country}</div>
         <div className='room-detail-title-below-info-right'><FiShare /> Share  <FiHeart /> Save </div>
       </div>
 

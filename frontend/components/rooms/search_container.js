@@ -5,7 +5,7 @@ import { asArray  } from '../../reducers/selectors';
 import Search from './search';
 
 const mapStateToProps = state => ({
-  rooms: asArray(state.entities),
+  rooms: Object.values(state.entities.rooms),
   maxGuest: state.ui.filters.maxGuest
 });
 

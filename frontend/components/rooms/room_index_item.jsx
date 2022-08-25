@@ -14,15 +14,18 @@ class IndexItem extends React.Component {
   }
 
   render() {
-    const { city, price, image_urls} = this.props.room;
+    const { country, city, price, image_urls} = this.props.room;
     return (
       <div className="room-index-item" onClick={this.handleClick} >
         <div className='index-item-image'>
-          <img src={window.house}/>
+          <img src={image_urls}/>
         </div>
         <div className="index-item-info">
           <div className="index-item-info-i" id="index-item-info-i-city">
           <span className="index-item-copy">{city}</span>
+          </div>
+          <div className="index-item-info-i" id="index-item-info-i-city">
+          <span className="index-item-copy">{country}</span>
           </div>
           <div className="index-item-info-i" id="index-item-info-i-price">
           <span className="index-item-copy">$ {price} night</span>
