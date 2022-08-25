@@ -19,7 +19,7 @@
 class Room < ApplicationRecord
     validates :lat, :long, :description, :max_guests, :num_beds, :num_baths, :price, :city, :country, :title, presence: true
 
-    has_one_attached :photo
+    has_many_attached :photo, dependent: :destroy
 
     has_many :reservations,
      primary_key: :id,

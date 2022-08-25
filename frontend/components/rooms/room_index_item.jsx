@@ -18,7 +18,7 @@ class IndexItem extends React.Component {
     return (
       <div className="room-index-item" onClick={this.handleClick} >
         <div className='index-item-image'>
-          <img src={image_urls}/>
+          <img src={image_urls[0]}/>
         </div>
         <div className="index-item-info">
           <div className="index-item-info-i" id="index-item-info-i-city">

@@ -20,14 +20,14 @@ const RoomDetail = ({ room }) => {
       <div className='room-detail-images'>
 
         <div className='room-detail-images-items-big'>
-        <img className="show-page-img" src={window.house}/>
+        <img className="show-page-img" src={room.image_urls[0]}/>
         </div>
 
         <div className='room-detail-images-items-small'>
-        <img className="show-page-img" src={window.house}/>
-        <img className="show-page-img" src={window.house}/>
-        <img className="show-page-img" src={window.house}/>
-        <img className="show-page-img" src={window.house}/>
+        <img className="show-page-img" src={room.image_urls[1]}/>
+        <img className="show-page-img" src={room.image_urls[2]}/>
+        <img className="show-page-img" src={room.image_urls[3]}/>
+        <img className="show-page-img" src={room.image_urls[4]}/>
         </div>
       
       </div>

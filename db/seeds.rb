@@ -17,6 +17,14 @@ Enjoy a weekend or a few days eco-friendly retreat in an architectural, geometri
 The house is an open plan, and though it has zero bedrooms, it can sleep 3!', max_guests: 4, num_beds: 2, num_baths: 2, price: 475, city: 'Rhinbeck, New York', country: 'United States', title: 'Architectural wonder in the woods')
 r1p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room1_1.jpg")
 room1.photo.attach(io:r1p1, filename: 'bnb/room1_1.jpg')
+r1p2 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room1_2.jpg")
+room1.photo.attach(io:r1p2, filename: 'bnb/room1_2.jpg')
+r1p3 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room1_3.jpg")
+room1.photo.attach(io:r1p3, filename: 'bnb/room1_3.jpg')
+r1p4 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room1_4.jpg")
+room1.photo.attach(io:r1p4, filename: 'bnb/room1_4.jpg')
+r1p5 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room1_5.jpg")
+room1.photo.attach(io:r1p5, filename: 'bnb/room1_5.jpg')
 
 
 
@@ -24,6 +32,14 @@ room2 = Room.create!(lat:41.53515, long: -74.22328, description: 'Reconnect with
  max_guests: 2, num_beds: 1, num_baths: 1, price: 180, city: 'Montgomery, New York', country: 'United States', title: 'The Step, a Quaint Cozy A-Frame, on a Farm + River')
 r2p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room2_1.jpg")
 room2.photo.attach(io:r2p1, filename: 'bnb/room2_1.jpg')
+r2p2 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room2_2.jpg")
+room2.photo.attach(io:r2p2, filename: 'bnb/room2_2.jpg')
+r2p3 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room2_3.jpg")
+room2.photo.attach(io:r2p3, filename: 'bnb/room2_3.jpg')
+r2p4 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room2_4.jpg")
+room2.photo.attach(io:r2p4, filename: 'bnb/room2_4.jpg')
+r2p5 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room2_5.jpg")
+room2.photo.attach(io:r2p5, filename: 'bnb/room2_5.jpg')
 
 
 
@@ -32,7 +48,14 @@ room3 = Room.create!(lat:46.98090, long: -71.25399, description: 'The "MICA", hi
  max_guests: 4, num_beds: 4, num_baths: 1, price: 308, city: 'Lac-Beauport, Quebec', country: 'Canada', title: 'MICA (Chalets Micro-Element) CITQ 303134')
 r3p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room3_1.jpg")
 room3.photo.attach(io:r3p1, filename: 'bnb/room3_1.jpg')
-
+r3p2 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room3_2.jpg")
+room3.photo.attach(io:r3p2, filename: 'bnb/room3_2.jpg')
+r3p3 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room3_3.jpg")
+room3.photo.attach(io:r3p3, filename: 'bnb/room3_3.jpg')
+r3p4 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room3_4.jpg")
+room3.photo.attach(io:r3p4, filename: 'bnb/room3_4.jpg')
+r3p5 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room3_5.jpg")
+room3.photo.attach(io:r3p5, filename: 'bnb/room3_5.jpg')
 
 
 
@@ -40,6 +63,14 @@ room4 = Room.create!(lat:46.19463, long: -74.67315, description: 'Located in a p
  max_guests: 14, num_beds: 6, num_baths: 5, price: 721, city: 'La Conception, Quebec', country: 'Canada', title: 'Chalet XO Tremblant - 5 bedrooms wt private bathroom, spa, sauna and rooftop')
 r4p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room4_1.jpg")
 room4.photo.attach(io:r4p1, filename: 'bnb/room4_1.jpg')
+r4p2 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room4_2.jpg")
+room4.photo.attach(io:r4p2, filename: 'bnb/room4_2.jpg')
+r4p3 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room4_3.jpg")
+room4.photo.attach(io:r4p3, filename: 'bnb/room4_3.jpg')
+r4p4 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room4_4.jpg")
+room4.photo.attach(io:r4p4, filename: 'bnb/room4_4.jpg')
+r4p5 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room4_5.jpg")
+room4.photo.attach(io:r4p5, filename: 'bnb/room4_5.jpg')
 
 
 
@@ -47,7 +78,14 @@ room5 = Room.create!(lat:45.81555, long: -74.22976, description: 'Located near F
  max_guests: 10, num_beds: 6, num_baths: 2, price: 485, city: 'Mille-Isles, Quebec', country: 'Canada', title: 'BLUE MOOSE | spa, sauna and lake access - Citq: 272661')
 r5p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room5_1.jpg")
 room5.photo.attach(io:r5p1, filename: 'bnb/room5_1.jpg')
-
+r5p2 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room5_2.jpg")
+room5.photo.attach(io:r5p2, filename: 'bnb/room5_2.jpg')
+r5p3 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room5_3.jpg")
+room5.photo.attach(io:r5p3, filename: 'bnb/room5_3.jpg')
+r5p4 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room5_4.jpg")
+room5.photo.attach(io:r5p4, filename: 'bnb/room5_4.jpg')
+r5p5 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room5_5.jpg")
+room5.photo.attach(io:r5p5, filename: 'bnb/room5_5.jpg')
 
 
 
@@ -57,6 +95,15 @@ room6 = Room.create!(lat:65.68006, long: -18.03447, description: 'Architectural 
  max_guests: 4, num_beds: 3, num_baths: 1, price: 158, city: 'Akureyri, Northeast', country: 'Iceland', title: 'Amazing view - Moderne apartment')
 r6p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room6_1.jpg")
 room6.photo.attach(io:r6p1, filename: 'bnb/room6_1.jpg')
+r6p2 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room6_2.jpg")
+room6.photo.attach(io:r6p2, filename: 'bnb/room6_2.jpg')
+r6p3 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room6_3.jpg")
+room6.photo.attach(io:r6p3, filename: 'bnb/room6_3.jpg')
+r6p4 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room6_4.jpg")
+room6.photo.attach(io:r6p4, filename: 'bnb/room6_4.jpg')
+r6p5 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room6_5.jpg")
+room6.photo.attach(io:r6p5, filename: 'bnb/room6_5.jpg')
+
 
 
 
@@ -64,6 +111,16 @@ room7 = Room.create!(lat:63.84330, long: -20.38771, description: 'We are located
  max_guests: 2, num_beds: 1, num_baths: 1, price: 581, city: 'Hella', country: 'Iceland', title: 'Glass cottage with Hot tub "Blár"')
 r7p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room7_1.jpg")
 room7.photo.attach(io:r7p1, filename: 'bnb/room7_1.jpg')
+r7p2 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room7_2.jpg")
+room7.photo.attach(io:r7p2, filename: 'bnb/room7_2.jpg')
+r7p3 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room7_3.jpg")
+room7.photo.attach(io:r7p3, filename: 'bnb/room7_3.jpg')
+r7p4 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room7_4.jpg")
+room7.photo.attach(io:r7p4, filename: 'bnb/room7_4.jpg')
+r7p5 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room7_5.jpg")
+room7.photo.attach(io:r7p5, filename: 'bnb/room7_5.jpg')
+
+
 
 
 
@@ -73,6 +130,16 @@ It consists of a large kitchen open to the living room and a bedroom with bathro
  max_guests: 4, num_beds: 3, num_baths: 1, price: 114, city: 'Noyers-sur-Cher, Centre-Val de Loire', country: 'France', title: 'La Grotte du Moulin de la Motte Baudoin')
 r8p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room8_1.jpg")
 room8.photo.attach(io:r8p1, filename: 'bnb/room8_1.jpg')
+r8p2 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room8_2.jpg")
+room8.photo.attach(io:r8p2, filename: 'bnb/room8_2.jpg')
+r8p3 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room8_3.jpg")
+room8.photo.attach(io:r8p3, filename: 'bnb/room8_3.jpg')
+r8p4 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room8_4.jpg")
+room8.photo.attach(io:r8p4, filename: 'bnb/room8_4.jpg')
+r8p5 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room8_5.jpg")
+room8.photo.attach(io:r8p5, filename: 'bnb/room8_5.jpg')
+
+
 
 
 
@@ -83,6 +150,16 @@ The house has been featured in the New York Times and in Wallpaper.',
   max_guests: 10, num_beds: 5, num_baths: 3, price: 348, city: 'El Port de la Selva, Catalonia', country: 'Spain', title: 'Sunflower House')
 r9p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room9_1.jpg")
 room9.photo.attach(io:r9p1, filename: 'bnb/room9_1.jpg')
+r9p2 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room9_2.jpg")
+room9.photo.attach(io:r9p2, filename: 'bnb/room9_2.jpg')
+r9p3 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room9_3.jpg")
+room9.photo.attach(io:r9p3, filename: 'bnb/room9_3.jpg')
+r9p4 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room9_4.jpg")
+room9.photo.attach(io:r9p4, filename: 'bnb/room9_4.jpg')
+r9p5 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room9_5.jpg")
+room9.photo.attach(io:r9p5, filename: 'bnb/room9_5.jpg')
+
+
 
 
 
@@ -91,6 +168,16 @@ An outstanding location!',
   max_guests: 3, num_beds: 2, num_baths: 1, price: 64, city: 'Borée, Rhône-Alpes', country: 'France', title: 'Thatched cottage surrounded by nature')
 r10p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room10_1.jpg")
 room10.photo.attach(io:r10p1, filename: 'bnb/room10_1.jpg')
+r10p2 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room10_2.jpg")
+room10.photo.attach(io:r10p2, filename: 'bnb/room10_2.jpg')
+r10p3 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room10_3.jpg")
+room10.photo.attach(io:r10p3, filename: 'bnb/room10_3.jpg')
+r10p4 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room10_4.jpg")
+room10.photo.attach(io:r10p4, filename: 'bnb/room10_4.jpg')
+r10p5 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room10_5.jpg")
+room10.photo.attach(io:r10p5, filename: 'bnb/room2_5.jpg')
+
+
 
 
 
@@ -101,3 +188,11 @@ Large windows offer stunning views of the lake.',
   max_guests: 8, num_beds: 6, num_baths: 5, price: 1990, city: 'Brienno, Lombardia', country: 'Italy', title: 'Filanda "Waterfront" On Lake Como')
 r11p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room11_1.jpg")
 room11.photo.attach(io:r11p1, filename: 'bnb/room11_1.jpg')
+r11p2 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room11_2.jpg")
+room11.photo.attach(io:r11p2, filename: 'bnb/room11_2.jpg')
+r11p3 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room11_3.jpg")
+room11.photo.attach(io:r11p3, filename: 'bnb/room11_3.jpg')
+r11p4 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room11_4.jpg")
+room11.photo.attach(io:r11p4, filename: 'bnb/room11_4.jpg')
+r11p5 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room11_5.jpg")
+room11.photo.attach(io:r11p5, filename: 'bnb/room11_5.jpg')
