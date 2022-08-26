@@ -9,6 +9,10 @@
     height: 98%;
 }
 
+.index-item-image img:hover {
+    filter: brightness(90%);
+}
+
 .index_page_all_rooms {
     display: flex;
     flex-direction: row;
@@ -29,6 +33,7 @@
     left: 0;
     right: 0;
     margin: 20px 5px 20px 5px;
+    cursor: pointer;
     // padding: 0 5%;
 }
 
@@ -37,6 +42,9 @@
 .index-item-info {
     width: 100%;
     height: auto;
+    line-height: 20px;
+    font-family: Roboto;
+    font-size: 15px;
 }
 
 .index-item-info-i {

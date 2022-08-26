@@ -6,7 +6,8 @@ import RoomShow from './room_show';
 
 const mapStateToProps = (state, { match }) => {
   const roomId = parseInt(match.params.roomId);
-  const room = selectRoom(state.entities, roomId);
+  // const room = state.entities.rooms[match.params.roomId];
+ const room = selectRoom(state.entities, roomId);
   return {
     roomId,
     room

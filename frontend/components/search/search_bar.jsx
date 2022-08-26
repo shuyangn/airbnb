@@ -14,11 +14,11 @@ const SearchBar = ({  maxGuest, updateFilter }) => (
           </div>
           <div className="check-in">
             <p>Check in</p>
-            <input type="text" placeholder="Add dates" />
+            <input type="date" placeholder='08/26/2022' min='2022-08-26' />
           </div>
           <div className="check-out">
             <p>Check out</p>
-            <input type="text" placeholder="Add dates" />
+            <input type="date" min='2022-08-27' placeholder="2022-08-27" />
           </div>
           <div className="guests">
             <p>Guests</p>

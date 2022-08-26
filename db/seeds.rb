@@ -12,34 +12,21 @@ demo_user = User.create!(username:'Guest', email: 'guest@email.com', password:'1
 
  
 Room.delete_all
-room1 = Room.create!(lat:41.94321, long: -73.83224, description: 'Unique experience, secluded.
-Enjoy a weekend or a few days eco-friendly retreat in an architectural, geometric masterpiece on 30 preserved acres just minutes from all that Rhinebeck and the Hudson Valley have to offer.
-The house is an open plan, and though it has zero bedrooms, it can sleep 3!', max_guests: 4, num_beds: 2, num_baths: 2, price: 475, city: 'Rhinbeck, New York', country: 'United States', title: 'Architectural wonder in the woods')
-r1p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room1_1.jpg")
-room1.photo.attach(io:r1p1, filename: 'bnb/room1_1.jpg')
-r1p2 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room1_2.jpg")
-room1.photo.attach(io:r1p2, filename: 'bnb/room1_2.jpg')
-r1p3 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room1_3.jpg")
-room1.photo.attach(io:r1p3, filename: 'bnb/room1_3.jpg')
-r1p4 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room1_4.jpg")
-room1.photo.attach(io:r1p4, filename: 'bnb/room1_4.jpg')
-r1p5 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room1_5.jpg")
-room1.photo.attach(io:r1p5, filename: 'bnb/room1_5.jpg')
 
+room10 = Room.create!(lat:44.88318, long: 4.19888, description: 'Charming wood and stone thatched cottage nestled on the South slopes of Mont Mézenc, near Gerbier de Jonc (where the source of the Loire river is located), in the Borée district of Ardèche, 8 mins from the ski resort of Les Estables.
+An outstanding location!',
+  max_guests: 3, num_beds: 2, num_baths: 1, price: 64, city: 'Borée, Rhône-Alpes', country: 'France', title: 'Thatched cottage surrounded by nature')
+r10p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room10_1.jpg")
+room10.photo.attach(io:r10p1, filename: 'bnb/room10_1.jpg')
+r10p2 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room10_2.jpg")
+room10.photo.attach(io:r10p2, filename: 'bnb/room10_2.jpg')
+r10p3 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room10_3.jpg")
+room10.photo.attach(io:r10p3, filename: 'bnb/room10_3.jpg')
+r10p4 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room10_4.jpg")
+room10.photo.attach(io:r10p4, filename: 'bnb/room10_4.jpg')
+r10p5 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room10_5.jpg")
+room10.photo.attach(io:r10p5, filename: 'bnb/room2_5.jpg')
 
-
-room2 = Room.create!(lat:41.53515, long: -74.22328, description: 'Reconnect with nature at this unforgettable escape. Located in the Hudson Valley, The Step is a little piece of paradise built on 78 acres of operating farm land near the Walkill River. It is an off the grid glamping experience equipped with the luxury of a queen size memory foam mattress for a good nights sleep. The Step is a secluded get away where you can explore our farm land, show off your scrabble skills, gaze at the stars, and be woken up by the sun through your windows', 
- max_guests: 2, num_beds: 1, num_baths: 1, price: 180, city: 'Montgomery, New York', country: 'United States', title: 'The Step, a Quaint Cozy A-Frame, on a Farm + River')
-r2p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room2_1.jpg")
-room2.photo.attach(io:r2p1, filename: 'bnb/room2_1.jpg')
-r2p2 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room2_2.jpg")
-room2.photo.attach(io:r2p2, filename: 'bnb/room2_2.jpg')
-r2p3 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room2_3.jpg")
-room2.photo.attach(io:r2p3, filename: 'bnb/room2_3.jpg')
-r2p4 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room2_4.jpg")
-room2.photo.attach(io:r2p4, filename: 'bnb/room2_4.jpg')
-r2p5 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room2_5.jpg")
-room2.photo.attach(io:r2p5, filename: 'bnb/room2_5.jpg')
 
 
 
@@ -56,6 +43,23 @@ r3p4 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room3
 room3.photo.attach(io:r3p4, filename: 'bnb/room3_4.jpg')
 r3p5 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room3_5.jpg")
 room3.photo.attach(io:r3p5, filename: 'bnb/room3_5.jpg')
+
+
+
+room7 = Room.create!(lat:63.84330, long: -20.38771, description: 'We are located on a lava desert in the south of Iceland. 5 minutes from the small town of Hella, close to all the popular attractions that southern Iceland has to offer, but also in a secret and secluded location.',
+ max_guests: 2, num_beds: 1, num_baths: 1, price: 581, city: 'Hella', country: 'Iceland', title: 'Glass cottage with Hot tub "Blár"')
+r7p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room7_1.jpg")
+room7.photo.attach(io:r7p1, filename: 'bnb/room7_1.jpg')
+r7p2 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room7_2.jpg")
+room7.photo.attach(io:r7p2, filename: 'bnb/room7_2.jpg')
+r7p3 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room7_3.jpg")
+room7.photo.attach(io:r7p3, filename: 'bnb/room7_3.jpg')
+r7p4 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room7_4.jpg")
+room7.photo.attach(io:r7p4, filename: 'bnb/room7_4.jpg')
+r7p5 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room7_5.jpg")
+room7.photo.attach(io:r7p5, filename: 'bnb/room7_5.jpg')
+
+
 
 
 
@@ -107,20 +111,6 @@ room6.photo.attach(io:r6p5, filename: 'bnb/room6_5.jpg')
 
 
 
-room7 = Room.create!(lat:63.84330, long: -20.38771, description: 'We are located on a lava desert in the south of Iceland. 5 minutes from the small town of Hella, close to all the popular attractions that southern Iceland has to offer, but also in a secret and secluded location.',
- max_guests: 2, num_beds: 1, num_baths: 1, price: 581, city: 'Hella', country: 'Iceland', title: 'Glass cottage with Hot tub "Blár"')
-r7p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room7_1.jpg")
-room7.photo.attach(io:r7p1, filename: 'bnb/room7_1.jpg')
-r7p2 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room7_2.jpg")
-room7.photo.attach(io:r7p2, filename: 'bnb/room7_2.jpg')
-r7p3 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room7_3.jpg")
-room7.photo.attach(io:r7p3, filename: 'bnb/room7_3.jpg')
-r7p4 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room7_4.jpg")
-room7.photo.attach(io:r7p4, filename: 'bnb/room7_4.jpg')
-r7p5 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room7_5.jpg")
-room7.photo.attach(io:r7p5, filename: 'bnb/room7_5.jpg')
-
-
 
 
 
@@ -163,21 +153,6 @@ room9.photo.attach(io:r9p5, filename: 'bnb/room9_5.jpg')
 
 
 
-room10 = Room.create!(lat:44.88318, long: 4.19888, description: 'Charming wood and stone thatched cottage nestled on the South slopes of Mont Mézenc, near Gerbier de Jonc (where the source of the Loire river is located), in the Borée district of Ardèche, 8 mins from the ski resort of Les Estables.
-An outstanding location!',
-  max_guests: 3, num_beds: 2, num_baths: 1, price: 64, city: 'Borée, Rhône-Alpes', country: 'France', title: 'Thatched cottage surrounded by nature')
-r10p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room10_1.jpg")
-room10.photo.attach(io:r10p1, filename: 'bnb/room10_1.jpg')
-r10p2 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room10_2.jpg")
-room10.photo.attach(io:r10p2, filename: 'bnb/room10_2.jpg')
-r10p3 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room10_3.jpg")
-room10.photo.attach(io:r10p3, filename: 'bnb/room10_3.jpg')
-r10p4 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room10_4.jpg")
-room10.photo.attach(io:r10p4, filename: 'bnb/room10_4.jpg')
-r10p5 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room10_5.jpg")
-room10.photo.attach(io:r10p5, filename: 'bnb/room2_5.jpg')
-
-
 
 
 
@@ -196,3 +171,33 @@ r11p4 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room
 room11.photo.attach(io:r11p4, filename: 'bnb/room11_4.jpg')
 r11p5 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room11_5.jpg")
 room11.photo.attach(io:r11p5, filename: 'bnb/room11_5.jpg')
+
+
+room1 = Room.create!(lat:41.94321, long: -73.83224, description: 'Unique experience, secluded.
+Enjoy a weekend or a few days eco-friendly retreat in an architectural, geometric masterpiece on 30 preserved acres just minutes from all that Rhinebeck and the Hudson Valley have to offer.
+The house is an open plan, and though it has zero bedrooms, it can sleep 3!', max_guests: 4, num_beds: 2, num_baths: 2, price: 475, city: 'Rhinbeck, New York', country: 'United States', title: 'Architectural wonder in the woods')
+r1p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room1_1.jpg")
+room1.photo.attach(io:r1p1, filename: 'bnb/room1_1.jpg')
+r1p2 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room1_2.jpg")
+room1.photo.attach(io:r1p2, filename: 'bnb/room1_2.jpg')
+r1p3 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room1_3.jpg")
+room1.photo.attach(io:r1p3, filename: 'bnb/room1_3.jpg')
+r1p4 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room1_4.jpg")
+room1.photo.attach(io:r1p4, filename: 'bnb/room1_4.jpg')
+r1p5 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room1_5.jpg")
+room1.photo.attach(io:r1p5, filename: 'bnb/room1_5.jpg')
+
+
+
+room2 = Room.create!(lat:41.53515, long: -74.22328, description: 'Reconnect with nature at this unforgettable escape. Located in the Hudson Valley, The Step is a little piece of paradise built on 78 acres of operating farm land near the Walkill River. It is an off the grid glamping experience equipped with the luxury of a queen size memory foam mattress for a good nights sleep. The Step is a secluded get away where you can explore our farm land, show off your scrabble skills, gaze at the stars, and be woken up by the sun through your windows', 
+ max_guests: 2, num_beds: 1, num_baths: 1, price: 180, city: 'Montgomery, New York', country: 'United States', title: 'The Step, a Quaint Cozy A-Frame, on a Farm + River')
+r2p1 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room2_1.jpg")
+room2.photo.attach(io:r2p1, filename: 'bnb/room2_1.jpg')
+r2p2 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room2_2.jpg")
+room2.photo.attach(io:r2p2, filename: 'bnb/room2_2.jpg')
+r2p3 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room2_3.jpg")
+room2.photo.attach(io:r2p3, filename: 'bnb/room2_3.jpg')
+r2p4 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room2_4.jpg")
+room2.photo.attach(io:r2p4, filename: 'bnb/room2_4.jpg')
+r2p5 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room2_5.jpg")
+room2.photo.attach(io:r2p5, filename: 'bnb/room2_5.jpg')

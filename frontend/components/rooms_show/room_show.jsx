@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import RoomDetail from './room_detail';
 import { ProtectedRoute } from '../../util/route_util';
 import NavBar2Container from "../nav_bar2/nav_bar2_container";
 import RoomMap from '../map/map';
+import ModalContainer from '../modal/modal';
+
 
 class RoomShow extends React.Component {
   constructor(props) {
@@ -20,9 +21,11 @@ class RoomShow extends React.Component {
   render() {
     const{ room, roomId, fetchRoom } = this.props;
 
+
     return(
       <div className="single-room-show">
         <NavBar2Container />          
+        <ModalContainer />
         <div className="all-room-details">
           <RoomDetail room={room ? room : ''} />
         </div>
