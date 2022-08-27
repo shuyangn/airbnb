@@ -20,14 +20,17 @@ const RoomDetail = ({ room }) => {
       <div className='room-detail-images'>
 
         <div className='room-detail-images-items-big'>
-          <img className="show-page-img" src={room.image_urls[0] ? room.image_urls[0] : ''}/>
+          {/* {console.log(room)} */}
+          <img className="show-page-img" src={room.image_urls ? room.image_urls[0] : ''}/>
         </div>
 
         <div className='room-detail-images-items-small'>
-          <img className="show-page-img" id="show-page-img-2" src={room.image_urls[1] ? room.image_urls[1] : ''}/>
-          <img className="show-page-img" id="show-page-img-3" src={room.image_urls[2] ? room.image_urls[2] : ''}/>
-          <img className="show-page-img" id="show-page-img-4" src={room.image_urls[3] ? room.image_urls[3] : ''}/>
-          <img className="show-page-img" id="show-page-img-5" src={room.image_urls[4] ? room.image_urls[4] : ''}/>
+          <img className="show-page-img" id="show-page-img-2" src={room.image_urls ? room.image_urls[1] : ''}/>
+          <img className="show-page-img" id="show-page-img-3" src={room.image_urls ? room.image_urls[2] : ''}/>
+          <img className="show-page-img" id="show-page-img-4" src={room.image_urls ? room.image_urls[3] : ''}/>
+          <img className="show-page-img" id="show-page-img-5" src={room.image_urls ? room.image_urls[4] : ''}/>
+          {/* {console.log(room)} */}
+          {/* <img className="show-page-img" id="show-page-img-5" src={(Object.values(room.image_urls).length === 5) ? room.image_urls[4] : ''}/> */}
         </div>
       
       </div>

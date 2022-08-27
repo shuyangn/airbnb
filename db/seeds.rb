@@ -25,7 +25,7 @@ room10.photo.attach(io:r10p3, filename: 'bnb/room10_3.jpg')
 r10p4 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room10_4.jpg")
 room10.photo.attach(io:r10p4, filename: 'bnb/room10_4.jpg')
 r10p5 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room10_5.jpg")
-room10.photo.attach(io:r10p5, filename: 'bnb/room2_5.jpg')
+room10.photo.attach(io:r10p5, filename: 'bnb/room10_5.jpg')
 
 
 

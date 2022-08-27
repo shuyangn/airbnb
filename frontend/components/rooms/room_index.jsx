@@ -1,10 +1,12 @@
 import React from "react";
 import RoomIndexItem from './room_index_item';
-
+import Loader from '../loader/loader';
 
 class RoomIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {loading: true};
+    setTimeout(() => this.setState({loading: false}), 2000);
   }
 
   componentDidMount() {
@@ -13,6 +15,13 @@ class RoomIndex extends React.Component {
 
   render() {
     const { rooms } = this.props;
+    if (this.state.loading) {
+      return (
+        <div className="loader-container">
+          <Loader loading={this.state.loading} />
+        </div>
+      );
+    }
 
     return (
       <div className="index_page">
