@@ -2,6 +2,8 @@ class Api::ReservationsController < ApplicationController
 
     def index
         params[:user_id] ? @reservations = Reservation.where(user_id: params[:user_id].to_i).order(check_in: :asc) : Reservation.all
+        @rooms = @reservations.pluck(:room_id)
+        render :index
     end
 
     def show
@@ -20,7 +22,7 @@ class Api::ReservationsController < ApplicationController
 
         if @reservation.save
             @user = @reservation.user
-            render :create
+            render :show
         else
             render json: @reservation.errors.full_messages, status: 422
         end
@@ -28,7 +30,7 @@ class Api::ReservationsController < ApplicationController
 
     def update
         @reservation = Reservation.find(params[:id])
-        if @reservation.save(reservation_params)
+        if @reservation.update(reservation_params)
             render :show
         else
             render json: @reservation.errors.full_messages, status: 422

@@ -2,56 +2,54 @@ import * as ReservationAPIUtil from "../util/reservation_api_util";
 
 export const RECEIVE_RESERVATIONS = "RECEIVE_RESERVATIONS";
 export const RECEIVE_RESERVATION = "RECEIVE_RESERVATION";
-export const REMOVE_RESERVATION = "REMOVE_RESERVATION";
-export const CREATE_RESERVATION = "CREATE_RESERVATION";
+export const DELETE_RESERVATION = "DELETE_RESERVATION";
+export const CHANGE_RESERVATION = "CHANGE_RESERVATION";
 
-const receiveReservations = (filter, value) => ({
-  type: RECEIVE_RESERVATIONS,
-  filter,
-  value
-});
-
-const receiveReservation = payload => {
+export const receiveReservations = (payload) => {
   return {
-    type: RECEIVE_RESERVATION,
-    reservation: payload.reservation,
-    user: payload.user
-  };
-};
+      type: RECEIVE_RESERVATIONS,
+      payload
+  }
+}
 
-const removeReservation = reservationId => ({
-  type: REMOVE_RESERVATION,
-  reservationId
-});
+export const receiveReservation = (reservation) => {
+  return {
+      type: RECEIVE_RESERVATION,
+      reservation
+  }
+}
 
-export const storeReservation = reservation => ({
-  type: CREATE_RESERVATION,
-  reservation
-});
+export const deleteReservation = (reservation) => {
+  return {
+      type: DELETE_RESERVATION,
+      reservation
+  }
+}
 
-export const fetchReservations = (filter, value) => dispatch => {
-  return ReservationAPIUtil.fetchReservations(filter, value).then(reservations =>
-    dispatch(receiveReservations(reservations))
-  );
-};
+export const changeReservation = (reservation) => {
+  return {
+      type: CHANGE_RESERVATION,
+      reservation
+  }
+}
 
-export const fetchReservation = id => dispatch =>
-  ReservationAPIUtil.fetchReservation(id).then(reservation =>
-    dispatch(receiveReservation(reservation))
-  );
 
-export const createReservation = (reservation, roomId) => dispatch => {
-  return ReservationAPIUtil.createReservation(reservation, roomId).then(payload =>
-    dispatch(receiveReservation(payload))
-  );
-};
+export const fetchReservations = (userId) => (dispatch) => {
+  return ReservationAPIUtil.fetchReservations(userId)
+  .then(reserves => dispatch(receiveReservations(reserves)))
+}
+export const createReservation = (reservation) => (dispatch) => {
+  return ReservationAPIUtil.createReservation(reservation)
+      .then(reserve => dispatch(receiveReservation(reserve)))
+}
 
-export const updateReservation = reservation => dispatch =>
-  ReservationAPIUtil.updateReservation(reservation).then(reservation =>
-    dispatch(receiveReservation(reservation))
-  );
+export const updateReservation = (reservation) => (dispatch) => {
+  return ReservationAPIUtil.updateReservation(reservation)
+  .then(reserve => dispatch(receiveReservation(reserve)))
+}
 
-export const deleteReservation = reservationId => dispatch =>
-  ReservationAPIUtil.deleteReservation(reservationId).then(reservationId =>
-    dispatch(removeReservation(reservationId))
-  );
+export const removeReservation = (reservation) => dispatch => {
+  
+  return ReservationAPIUtil.removeReservation(reservation)
+  .then(reservation => dispatch(deleteReservation(reservation)))
+}
