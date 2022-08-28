@@ -5,6 +5,7 @@ import { ProtectedRoute } from '../../util/route_util';
 import NavBar2Container from "../nav_bar2/nav_bar2_container";
 import RoomMap from '../map/map';
 import ModalContainer from '../modal/modal';
+import Reservation from './reservation';
 
 
 class RoomShow extends React.Component {
@@ -19,7 +20,7 @@ class RoomShow extends React.Component {
 
 
   render() {
-    const{ room, roomId, fetchRoom } = this.props;
+    const{ room, roomId, fetchRoom, openModal, createReservation, currentRoom, currentUser } = this.props;
 
 
     return(
@@ -27,7 +28,8 @@ class RoomShow extends React.Component {
         <NavBar2Container />          
         <ModalContainer />
         <div className="all-room-details">
-          <RoomDetail room={room ? room : ''} />
+          <RoomDetail room={room ? room : ''} openModal={openModal} createReservation={createReservation} currentRoom={currentRoom} currentUser={currentUser}/>
+          <Reservation reservations={currentRoom.reservations}/>
         </div>
         <div className="single-room-map">
           <p>Where you will be</p>

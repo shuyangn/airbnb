@@ -3,19 +3,27 @@ import { connect } from 'react-redux';
 import { fetchRoom } from '../../actions/room_actions';
 import { selectRoom } from '../../reducers/selectors';
 import RoomShow from './room_show';
+import { openModal } from '../../actions/modal_actions';
+import {createReservation} from '../../actions/reservation_actions';
+
 
 const mapStateToProps = (state, { match }) => {
   const roomId = parseInt(match.params.roomId);
+  const currentRoom = state.session.currentRoom;
   // const room = state.entities.rooms[match.params.roomId];
  const room = selectRoom(state.entities, roomId);
   return {
     roomId,
-    room
+    room,
+    currentRoom,
+    currentUser: state.session.currentUser
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchRoom: id => dispatch(fetchRoom(id))
+  fetchRoom: id => dispatch(fetchRoom(id)),
+  openModal: formType => dispatch(openModal(formType)),
+  createReservation: reservation => dispatch(createReservation(reservation))
 });
 
 export default connect(

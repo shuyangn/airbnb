@@ -5,8 +5,9 @@ import { FiShare, FiHeart, FiCalendar} from "react-icons/fi";
 import { GiDesk, GiComputerFan, GiToothbrush } from "react-icons/gi";
 import { BiBath } from "react-icons/bi";
 import { MdOutlineDryCleaning, MdOutlineLocalLaundryService, MdOutlineMicrowave, MdOutlineElevator } from "react-icons/md";
+import Reservation from './reservation';
 
-const RoomDetail = ({ room }) => {
+const RoomDetail = ({ room, openModal, createReservation, currentRoom, currentUser }) => {
   return (
     <div className='room-detail-all'>
       <div className='room-detail-title'>
@@ -125,6 +126,7 @@ const RoomDetail = ({ room }) => {
         <div className='room-detail-right-half'>
           <p>good</p>
           <p>bye</p>
+          <Reservation openModal={openModal} createReservation={createReservation} currentUser={currentUser} room={currentRoom} reservations={currentRoom.reservations} />
         </div>
       </div>
     </div>

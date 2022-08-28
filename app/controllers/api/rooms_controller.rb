@@ -13,7 +13,10 @@ class Api::RoomsController < ApplicationController
   end
 
   def show
-    @room = Room.find(params[:id])
+    @room = Room.includes(:reservations).find(params[:id])
+    @reservations = @room.reservations
+
+    render :show
   end
 
 end
