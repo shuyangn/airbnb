@@ -124,9 +124,7 @@ const RoomDetail = ({ room, openModal, createReservation, currentRoom, currentUs
 
 
         <div className='room-detail-right-half'>
-          <p>good</p>
-          <p>bye</p>
-          <Reservation openModal={openModal} createReservation={createReservation} currentUser={currentUser} room={currentRoom} reservations={currentRoom.reservations} />
+          <Reservation openModal={openModal} createReservation={createReservation} currentUser={currentUser} room={currentRoom}  />
         </div>
       </div>
     </div>

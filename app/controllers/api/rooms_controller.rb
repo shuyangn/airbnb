@@ -4,9 +4,9 @@ class Api::RoomsController < ApplicationController
   def index
 
     if params[:maxGuest]
-      @rooms = Room.where("max_guests > ?", params[:maxGuest])
+      @rooms = Room.includes(:reservations).where("max_guests >= ?", params[:maxGuest])
     else 
-      @rooms = Room.all
+      @rooms = Room.includes(:reservations).all
     end
 
     render :index
@@ -14,7 +14,6 @@ class Api::RoomsController < ApplicationController
 
   def show
     @room = Room.includes(:reservations).find(params[:id])
-    @reservations = @room.reservations
 
     render :show
   end

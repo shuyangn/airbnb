@@ -22,14 +22,14 @@ class RoomShow extends React.Component {
   render() {
     const{ room, roomId, fetchRoom, openModal, createReservation, currentRoom, currentUser } = this.props;
 
-
     return(
       <div className="single-room-show">
         <NavBar2Container />          
         <ModalContainer />
         <div className="all-room-details">
+          
           <RoomDetail room={room ? room : ''} openModal={openModal} createReservation={createReservation} currentRoom={currentRoom} currentUser={currentUser}/>
-          <Reservation reservations={currentRoom.reservations}/>
+          {/* <Reservation reservations={currentRoom.reservations}/> */}
         </div>
         <div className="single-room-map">
           <p>Where you will be</p>

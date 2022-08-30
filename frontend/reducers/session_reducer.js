@@ -10,7 +10,7 @@ const sessionReducer = (state = _nullSession, action) => {
         case RECEIVE_CURRENT_USER:
             return Object.assign({},state, { currentUser: action.user });
         case LOGOUT_CURRENT_USER:
-            return _nullSession;
+            return Object.assign({},state,_nullSession);
         case RECEIVE_ROOM:
             return Object.assign({}, state, {currentRoom: action.room} );
         case RECEIVE_RESERVATION:

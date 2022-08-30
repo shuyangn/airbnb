@@ -2,9 +2,12 @@ import React from 'react';
 import {DateRange} from 'react-date-range';
 import { withRouter } from 'react-router';
 
+
+
 class Reservation extends React.Component {
     constructor(props){
         super(props);
+        
         const currDate = new Date();
         this.state = {
             startDate: currDate,
@@ -70,7 +73,7 @@ class Reservation extends React.Component {
             num_guests: this.state.guests
         }
         this.props.createReservation(reservation);
-        this.props.history.push('/reservations')
+        this.props.history.push('/rooms')
         const currDate = new Date()
         this.setState({
             startDate: currDate,
@@ -158,15 +161,15 @@ class Reservation extends React.Component {
     }
 
     render() {
-        let disabledDates = [];
-            if (this.props.reservations){
-            Object.values(this.props.reservations).forEach (reservation => {
+        // let disabledDates = [];
+        //     if (this.props.room.reservations){
+        //     Object.values(this.props.room.reservations).forEach (reservation => {
                 
-                let start = reservation.startDate;
-                let end = reservation.endDate;
-                disabledDates = disabledDates.concat(this.dateRange(start, end))
-            })
-        }  
+        //         let start = reservation.startDate;
+        //         let end = reservation.endDate;
+        //         disabledDates = disabledDates.concat(this.dateRange(start, end))
+        //     })
+        // }  
         
             
             const initialState = (this.state.startDate == this.state.endDate)
@@ -199,7 +202,7 @@ class Reservation extends React.Component {
                     </label>
                     <label className='property-reservation-input-label'>Number of guests:  
                             <select className='property-reservation-input' onChange={this.changeGuest} value={this.state.guests}>
-                            {[1, 2, 3, 4, 5, 6, 7, 8].map(i => {
+                            {[1,2,3,4].map(i => {
                                 return <option key={i} value={i}>{i}</option>
                             })}
                         </select>
@@ -215,13 +218,16 @@ class Reservation extends React.Component {
                     editableDateInputs={true}
                     showSelectionPreview={true}
                     direction='horizontal'
-                    months={2}
+                    months={1}
                     showDateDisplay={false}
                     showMonthAndYearPickers={false}
                     minDate={new Date()}
                     shownDate={new Date(currDate.setMonth(currDate.getMonth() + 1))}
                     rangeColor={['purple']}
-                    disabledDates={disabledDates}
+                    // disabledDates={disabledDates}
+
+
+
                     // disabledDay={this.handleDisable}
                     // focusedRange={[this.state.startDate, this.state.endDate]}
 

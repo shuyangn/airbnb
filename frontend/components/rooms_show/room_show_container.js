@@ -12,6 +12,7 @@ const mapStateToProps = (state, { match }) => {
   const currentRoom = state.session.currentRoom;
   // const room = state.entities.rooms[match.params.roomId];
  const room = selectRoom(state.entities, roomId);
+ 
   return {
     roomId,
     room,
