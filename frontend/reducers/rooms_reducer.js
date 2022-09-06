@@ -1,4 +1,5 @@
 import { RECEIVE_ROOMS, RECEIVE_ROOM } from '../actions/room_actions';
+import {RECEIVE_RESERVATIONS} from '../actions/reservation_actions';
 
 const roomsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -9,6 +10,8 @@ const roomsReducer = (state = {}, action) => {
       case RECEIVE_ROOM:
         nextState[action.room.id] = action.room;
         return nextState;
+      case RECEIVE_RESERVATIONS:
+        return Object.assign({}, state, action.payload.rooms)
       default:
         return state;
     }

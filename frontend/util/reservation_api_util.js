@@ -15,7 +15,8 @@ export const fetchReservation = (reservation) => {
 export const updateReservation = (reservation) => {
   return $.ajax({
       method: 'PATCH',
-      url: `/api/users/${reservation.user_id}/reservations/${reservation.id}`
+      url: `/api/users/${reservation.user_id}/reservations/${reservation.id}`,
+      data: { reservation }
   })
 }
 

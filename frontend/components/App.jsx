@@ -16,6 +16,7 @@ const App = () => (
       <AuthRoute exact path="/" component={Splash} />
       <Route exact path="/rooms" component={SearchContainer}/>
       <Route exact path="/rooms/:roomId" component={RoomShowContainer} />
+      <Route exact path="/profile" />
     </Switch>
     
     <footer>

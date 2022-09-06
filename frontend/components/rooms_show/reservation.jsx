@@ -1,7 +1,9 @@
 import React from 'react';
-import {DateRange} from 'react-date-range';
+import {DateRange, DateRangePicker} from 'react-date-range';
 import { withRouter } from 'react-router';
 
+//openModal={openModal} createReservation={createReservation} 
+//currentUser={currentUser} room={currentRoom}
 
 
 class Reservation extends React.Component {
@@ -72,18 +74,18 @@ class Reservation extends React.Component {
             check_out: this.state.endDate,
             num_guests: this.state.guests
         }
-        this.props.createReservation(reservation);
-        this.props.history.push('/rooms')
+        this.props.createReservation(reservation).then(
+        this.props.history.push('/profile'));
         const currDate = new Date()
         this.setState({
             startDate: currDate,
             endDate: currDate,
-            created: true,
-            guests: 1
+            guests: 1,
+            created: true
         })
     }
 
-    dateRange(d1, d2) {
+    dateRange(d1, d2) {   //return dates of selected
         
         let firstDate = new Date(d1);
         let secondDate = new Date(d2);
@@ -224,6 +226,8 @@ class Reservation extends React.Component {
                     minDate={new Date()}
                     shownDate={new Date(currDate.setMonth(currDate.getMonth() + 1))}
                     rangeColor={['purple']}
+                    startDatePlaceHolderText='Check In'
+                    endDatePlaceHolderText='Check Out'
                     // disabledDates={disabledDates}
 
 
@@ -240,3 +244,6 @@ class Reservation extends React.Component {
 }
 
 export default withRouter(Reservation);
+
+
+
