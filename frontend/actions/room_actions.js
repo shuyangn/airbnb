@@ -8,9 +8,10 @@ const receiveRooms = rooms => ({
     rooms
 });
 
-const receiveRoom = room => ({
+const receiveRoom = payload => ({
     type: RECEIVE_ROOM,
-    room
+    room: payload.room,
+    reservations: payload.reservations
 });
 
 export const fetchRooms = filters => dispatch => (
@@ -19,5 +20,5 @@ export const fetchRooms = filters => dispatch => (
 
 
 export const fetchRoom = id => dispatch => (
-    RoomApiUtil.fetchRoom(id).then(room => dispatch(receiveRoom(room)))
+    RoomApiUtil.fetchRoom(id).then(payload => dispatch(receiveRoom(payload)))
 );

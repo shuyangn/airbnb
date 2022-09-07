@@ -1,37 +1,37 @@
-export const fetchReservations = (userId) => {
+export const fetchReservations = () => {
   return $.ajax({
       method: 'GET',
-      url: `api/users/${userId}/reservations`
+      url: `api/reservations`
   })
 }
 
-export const fetchReservation = (reservation) => {
+export const fetchReservation = (id) => {
   return $.ajax({
     method: 'GET',
-    url: `api/users/${reservation.user_id}/reservations/${reservation.id}`
+    url: `api/reservations/${id}`
   })
 }
 
 export const updateReservation = (reservation) => {
   return $.ajax({
       method: 'PATCH',
-      url: `/api/users/${reservation.user_id}/reservations/${reservation.id}`,
+      url: `/api/reservations/${reservation.id}`,
       data: { reservation }
   })
 }
 
-export const createReservation = (reservation) => {
+export const createReservation = (reservation, roomId) => {
   return $.ajax({
       method: 'POST',
-      url: `/api/users/${reservation.user_id}/reservations`,
+      url: `/api/rooms/${roomId}/reservations`,
       data: { reservation }
   })
 }
 
-export const removeReservation = (reservation) => {
+export const deleteReservation = (id) => {
   
   return $.ajax({
       method: 'DELETE',
-      url: `/api/users/${reservation.user_id}/reservations/${reservation.id}`
+      url: `/api/reservations/${id}`
   })
 }

@@ -9,6 +9,12 @@ class Api::UsersController < ApplicationController
         end
     end
 
+    def show
+        @user = User.includes(:reservations).find_by(id: params[:id])
+        @reservations = @user.reservations
+    
+        render :show
+
     def user_params
         params.require(:user).permit(:username, :email, :password)
     end

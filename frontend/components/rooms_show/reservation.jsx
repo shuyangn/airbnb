@@ -1,249 +1,191 @@
-import React from 'react';
-import {DateRange, DateRangePicker} from 'react-date-range';
-import { withRouter } from 'react-router';
-
-//openModal={openModal} createReservation={createReservation} 
-//currentUser={currentUser} room={currentRoom}
+import React from "react";
+import { DateRangePicker, isSameDay } from "react-date-range";
+import moment from "moment";
+import { withRouter } from "react-router-dom";
 
 
-class Reservation extends React.Component {
-    constructor(props){
-        super(props);
-        
-        const currDate = new Date();
-        this.state = {
-            startDate: currDate,
-            endDate: currDate,
-            guests: 1,
-            created: false,
-            booking: false,
-            duration: 0
-        };
-        this.handleSelect = this.handleSelect.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.changeGuest = this.changeGuest.bind(this);
-        this.bookingMenu = this.bookingMenu.bind(this);
-        this.handleConfirm = this.handleConfirm.bind(this);
-        this.handleBackClick = this.handleBackClick.bind(this);
-    }
+class ReservationForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = this.props.reservation;
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.calculateDays = this.calculateDays.bind(this);
+    this.isBlocked = this.isBlocked.bind(this);
+    this.isInvalid = this.isInvalid.bind(this);
+  }
 
-    handleSelect(e) {
-        const {startDate, endDate} = e.selection
-        const timeDiff = Math.abs(endDate - startDate)
-        const dayDiff = Math.ceil(timeDiff / (24*60*60*1000))
-        this.setState({
-            startDate: startDate,
-            endDate: endDate,
-            duration: dayDiff
-        })  
-    }
+  handleSubmit(e) {
+    const start = moment(this.state.startDate).format("L");
+    const end = moment(this.state.endDate).format("L");
 
-
-    changeGuest(e) {
-        this.setState({
-            guests: parseInt(e.target.value)
-        })
-    }
-
-    handleBackClick(e) {
-        this.setState({
-            booking: false
-        })
-    }
-
-    handleSubmit(e) {
-        
-        if (this.props.currentUser) {
-            e.preventDefault()
-            this.setState({
-                booking: true
-            })
-        } else {
-            e.preventDefault();
-            e.stopPropagation();
-            this.props.openModal('login')
-        }
-    }
-
-    handleConfirm(e) {
-        e.preventDefault()
-        let reservation = {
-            room_id: this.props.room.id,
-            user_id: this.props.currentUser.id,
-            check_in: this.state.startDate,
-            check_out: this.state.endDate,
-            num_guests: this.state.guests
-        }
-        this.props.createReservation(reservation).then(
-        this.props.history.push('/profile'));
-        const currDate = new Date()
-        this.setState({
-            startDate: currDate,
-            endDate: currDate,
-            guests: 1,
-            created: true
-        })
-    }
-
-    dateRange(d1, d2) {   //return dates of selected
-        
-        let firstDate = new Date(d1);
-        let secondDate = new Date(d2);
-        let firstDateValue = firstDate.getDate() - 1;
-        let midValue1 = firstDate.setDate(firstDateValue)
-        firstDate = new Date(midValue1)
-        let dates = [];
-        while (firstDate < secondDate) {
-            dates.push(firstDate)
-            let nextDay = firstDate.getDate() + 1
-            let midValue2 = firstDate.setDate(nextDay)
-            firstDate = new Date(midValue2)
-        }
-        return dates; 
-    }
-
-    bookingMenu() {
-        const {startDate, endDate, guests,duration} = this.state;
-        if (this.state.booking) {
-            return (
-                <div className='booking-menu'>
-                    <div className='booking-menu-top'>
-                        <p className='booking-top-price'>${this.props.room.price} / night</p>
-                        <p onClick={this.handleBackClick} className='booking-menu-back-button'>Back</p>
-                    </div>
-                    <div>
-                        <div className='booking-details'>
-                            <div className='booking-dates'>
-                                    <div className='booking-date'>
-                                        <label>CHECK-IN</label>
-                                        <p>{startDate.getMonth() + 1}/{startDate.getDate()}/{startDate.getFullYear()}</p> 
-                                    </div>
-                                    <div className='booking-date'>
-                                        <label >CHECK-OUT</label>
-                                        <p>{endDate.getMonth() + 1}/{endDate.getDate()}/{endDate.getFullYear()}</p>
-                                       
-                                    </div>
-                            </div>
-                            <div className='booking-guests'>
-                                <label>GUESTS</label>
-                                <p>{guests}{guests > 1 ? ' guests' : ' guest'}</p>
-                                
-                            </div>
-                            </div>
-
-                        <button onClick={this.handleConfirm} className='booking-menu-reserve-button'>Reserve</button>
-                        <div className='booking-pricing'>
-                            <div>
-                                <p>${this.props.room.price} x {duration} nights</p>
-                                <p>${parseInt(this.props.room.price)*parseInt(duration)}</p>
-                            </div>
-                            <div>
-                                <p>$5 x {guests}{guests > 1 ? ' guests' : ' guest'}</p>
-                                <p>${guests * 5}</p>
-                            </div>
-                            <div>
-                                <p>Cleaning fee</p>
-                                <p>$10</p>
-                            </div>
-                            <div>
-                                <p>Service fee</p>
-                                <p>$20</p>
-                            </div>
-                            <div className='pricing-total'>
-                                <p>Total</p>
-                                <p>${10 + 20 + parseInt(this.props.room.price)*parseInt(duration) + parseInt(guests)*5}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )
-        }else {
-            return null;
-        }
-    }
-
-    render() {
-        // let disabledDates = [];
-        //     if (this.props.room.reservations){
-        //     Object.values(this.props.room.reservations).forEach (reservation => {
-                
-        //         let start = reservation.startDate;
-        //         let end = reservation.endDate;
-        //         disabledDates = disabledDates.concat(this.dateRange(start, end))
-        //     })
-        // }  
-        
-            
-            const initialState = (this.state.startDate == this.state.endDate)
-            const currDate = new Date()
-            const selectionRange = {
-                startDate: this.state.startDate, 
-                endDate: this.state.endDate,
-                key: 'selection',
-            }
-            const { startDate, endDate } = this.state;
-
-
-    if (this.state.booking){
-        return(
-            this.bookingMenu()
-        )
+    e.preventDefault();
+    if (this.isInvalid(start, end, this.props.blockedDates)) {} 
+    else if (this.props.user) {
+      if (this.state.startDate && this.state.endDate) {
+        this.props.storeReservation({
+          check_in: start,
+          check_out: end,
+          num_guests: this.state.numGuest
+        //   rating: this.props.rating
+        });
+        this.props.history.push(
+          `${this.props.history.location.pathname}/confirmation`
+        );
+      }
     } else {
-        return (
-            <div className='reservation-container'>
-                <h1 className='create-reservation-header'>Book a stay today!</h1>
-                <form onSubmit={this.handleSubmit} className='property-reservation-form'>
-                    <label className='property-reservation-input-label'>Check-in date:
-                            <input className='property-reservation-input' disabled type="text" value={!initialState ? `${startDate.getMonth()+1}/${startDate.getDate()}/${startDate.getFullYear()} ` : ''} />
-                    </label>
-                    <label className='property-reservation-input-label'>Check-out date:
-                            <input className='property-reservation-input' disabled type="text" value={!initialState ? `${endDate.getMonth()+1}/${endDate.getDate()}/${endDate.getFullYear()} ` : ''} />
-                    </label>
-                    <label className='property-reservation-input-label'>Duration: 
-                        <input className='property-reservation-input' disabled type="text" value={this.state.duration + ' Nights'} />
-                    </label>
-                    <label className='property-reservation-input-label'>Number of guests:  
-                            <select className='property-reservation-input' onChange={this.changeGuest} value={this.state.guests}>
-                            {[1,2,3,4].map(i => {
-                                return <option key={i} value={i}>{i}</option>
-                            })}
-                        </select>
-                    </label>
-                    <label className='property-reservation-input-label-submit'>
-                        <input className='property-reservation-submit' type="submit" value='Book Today!' disabled={endDate==startDate ? true : false} />
-                    </label>
-                    {this.state.created ? <p className='booking-confirmation'>Your booking has been confirmed, we can't wait to see you!</p> : null }
-                </form>
-                <DateRange
-                    ranges={[selectionRange]}
-                    onChange={this.handleSelect}
-                    editableDateInputs={true}
-                    showSelectionPreview={true}
-                    direction='horizontal'
-                    months={1}
-                    showDateDisplay={false}
-                    showMonthAndYearPickers={false}
-                    minDate={new Date()}
-                    shownDate={new Date(currDate.setMonth(currDate.getMonth() + 1))}
-                    rangeColor={['purple']}
-                    startDatePlaceHolderText='Check In'
-                    endDatePlaceHolderText='Check Out'
-                    // disabledDates={disabledDates}
-
-
-
-                    // disabledDay={this.handleDisable}
-                    // focusedRange={[this.state.startDate, this.state.endDate]}
-
-                    
-                />
-            </div>
-            )
-        }
+      this.props.openModal("login");
     }
+  }
+
+  isInvalid(start, end, dates) {
+    if (start && end) {
+      start = moment(start);
+      end = moment(end);
+      while (start <= end) {
+        for (let i = 0; i < dates.length; i++) {
+          if (dates[i]._i === start.format("YYYY-MM-DD")) {
+            return true;
+          }
+        }
+        start = start.add(1, "days");
+      }
+    }
+    return false;
+  }
+
+  isBlocked(day1) {
+    return this.props.blockedDates.some(day2 => {
+      return isSameDay(day1, day2);
+    });
+  }
+
+  update(field) {
+    return e => {
+      this.setState({ [field]: e.target.value });
+    };
+  }
+
+  calculateDays(start, end) {
+    if ((start, end)) {
+      return Math.round(end.diff(start) / 86400000);
+    }
+  }
+
+
+  render() {
+    const formClass =
+      this.state.startDate && this.state.endDate
+        ? "longer-form"
+        : "shorter-form";
+
+    const nights =
+      this.state.startDate && this.state.endDate
+        ? this.calculateDays(this.state.startDate, this.state.endDate)
+        : null;
+    const text_night = nights > 1 ? "nights" : "night";
+    const price = this.props.room.price;
+    const roomFee = nights * price;
+    const serviceFee = 10 * nights;
+    const otherFee = 6 * nights;
+    const totalFee = roomFee + serviceFee + otherFee;
+
+    const displayFees =
+      this.state.startDate && this.state.endDate ? (
+        <div className="fees">
+          <div className="fee">
+            <div>
+              ${price} x {nights} {text_night}
+            </div>
+            <div>${roomFee}</div>
+          </div>
+
+          <div className="fee">
+            <div>Service fees</div>
+            <div>${serviceFee}</div>
+          </div>
+
+          <div className="fee">
+            <div>Occupancy taxes and fees</div>
+            <div>${otherFee}</div>
+          </div>
+
+          <div className="fee no-under-border">
+            <div>Total</div>
+            <div>${totalFee}</div>
+          </div>
+        </div>
+      ) : null;
+
+    // const stars = [];
+    // let i = 0;
+    // while (i < this.props.rating) {
+    //   stars.push(<i key={i} className="fas fa-star" />);
+    //   i++;
+    // }
+    // while (stars.length < 5) {
+    //   stars.push(<i key={stars.length} className="far fa-star" />);
+    // }
+
+    const options = [];
+
+    if (this.props.room.num_guests) {
+      const maxGuests = this.props.room.num_guests;
+
+      for (let i = 0; i < maxGuests; i++) {
+        options.push(
+          <option key={i} value={i + 1}>
+            {i + 1}
+          </option>
+        );
+      }
+    }
+    return (
+      <div className={formClass}>
+        <div className="order-form-price">
+          <span className="form-price">$ {this.props.room.price} </span>
+          <span className="per-night">per night</span>
+          {/* <p className="rating-star">{stars}</p> */}
+        </div>
+
+        <div className="form-date">Dates</div>
+
+        <DateRangePicker
+          startDate={this.state.startDate}
+          startDateId="your_unique_start_date_id"
+          endDate={this.state.endDate}
+          endDateId="your_unique_end_date_id"
+          startDatePlaceholderText="Check In"
+          endDatePlaceholderText="Check Out"
+          onDatesChange={({ startDate, endDate }) =>
+            this.setState({ startDate, endDate })
+          }
+          focusedInput={this.state.focusedInput}
+          onFocusChange={focusedInput => this.setState({ focusedInput })}
+          numberOfMonths={1}
+          isDayBlocked={this.isBlocked}
+          isOutsideRange={() => false}
+        />
+
+        <div className="form-date">Guest</div>
+
+        <form className="guest-num">
+          <select onChange={this.update("numGuest")}>{options}</select>
+          {/* <Dropdown /> */}
+        </form>
+
+        {displayFees}
+
+        <button
+          type="button"
+          className="form-button"
+          onClick={this.handleSubmit}
+        >
+          Book
+        </button>
+        <p className="per-night won-charge">You won’t be charged yet</p>
+      </div>
+    );
+  }
 }
 
-export default withRouter(Reservation);
-
-
-
+export default withRouter(ReservationForm);

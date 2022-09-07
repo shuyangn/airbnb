@@ -5,7 +5,8 @@ import { FiShare, FiHeart, FiCalendar} from "react-icons/fi";
 import { GiDesk, GiComputerFan, GiToothbrush } from "react-icons/gi";
 import { BiBath } from "react-icons/bi";
 import { MdOutlineDryCleaning, MdOutlineLocalLaundryService, MdOutlineMicrowave, MdOutlineElevator } from "react-icons/md";
-import Reservation from './reservation';
+import ReservationContainer from './reservation_container';
+import DatePicker from "./calendar";
 
 const RoomDetail = ({ room, openModal, createReservation, currentRoom, currentUser }) => {
   return (
