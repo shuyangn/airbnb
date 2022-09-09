@@ -16,3 +16,4 @@ json.reservations do
         end
     end
 end
+

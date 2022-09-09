@@ -163,15 +163,16 @@ class Reservation extends React.Component {
     }
 
     render() {
-        // let disabledDates = [];
-        //     if (this.props.room.reservations){
-        //     Object.values(this.props.room.reservations).forEach (reservation => {
+        debugger
+        let disabledDates = [];
+            if (this.props.reservations){
+            Object.values(this.props.reservations).forEach(reservation => {
                 
-        //         let start = reservation.startDate;
-        //         let end = reservation.endDate;
-        //         disabledDates = disabledDates.concat(this.dateRange(start, end))
-        //     })
-        // }  
+                let start = reservation.check_in;
+                let end = reservation.check_out;
+                disabledDates = disabledDates.concat(this.dateRange(start, end))
+            })
+        }  
         
             
             const initialState = (this.state.startDate == this.state.endDate)
@@ -228,12 +229,8 @@ class Reservation extends React.Component {
                     rangeColor={['purple']}
                     startDatePlaceHolderText='Check In'
                     endDatePlaceHolderText='Check Out'
-                    // disabledDates={disabledDates}
+                    disabledDates={disabledDates}
 
-
-
-                    // disabledDay={this.handleDisable}
-                    // focusedRange={[this.state.startDate, this.state.endDate]}
 
                     
                 />
