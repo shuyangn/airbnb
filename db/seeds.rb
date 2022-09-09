@@ -10,6 +10,7 @@ User.delete_all
 
 demo_user = User.create!(username:'Guest', email: 'guest@email.com', password:'112233')
 
+Reservation.delete_all
  
 Room.delete_all
 
@@ -201,3 +202,17 @@ r2p4 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room2
 room2.photo.attach(io:r2p4, filename: 'bnb/room2_4.jpg')
 r2p5 = URI.open("https://active-storage-enjoybnb-seed.s3.amazonaws.com/bnb/room2_5.jpg")
 room2.photo.attach(io:r2p5, filename: 'bnb/room2_5.jpg')
+
+
+
+reservation1 = Reservation.create!(user_id: demo_user.id, num_guests:1, room_id: room1.id, check_in: Time.new(2022,9,1).to_date, check_out: Time.new(2022,9,3).to_date)
+reservation2 = Reservation.create!(user_id: demo_user.id, num_guests:1, room_id: room2.id, check_in: Time.new(2022,9,1).to_date, check_out: Time.new(2022,9,3).to_date)
+reservation3 = Reservation.create!(user_id: demo_user.id, num_guests:1, room_id: room3.id, check_in: Time.new(2022,9,1).to_date, check_out: Time.new(2022,9,3).to_date)
+reservation4 = Reservation.create!(user_id: demo_user.id, num_guests:1, room_id: room4.id, check_in: Time.new(2022,9,1).to_date, check_out: Time.new(2022,9,3).to_date)
+reservation5 = Reservation.create!(user_id: demo_user.id, num_guests:1, room_id: room5.id, check_in: Time.new(2022,9,1).to_date, check_out: Time.new(2022,9,3).to_date)
+reservation6 = Reservation.create!(user_id: demo_user.id, num_guests:1, room_id: room6.id, check_in: Time.new(2022,9,1).to_date, check_out: Time.new(2022,9,3).to_date)
+reservation7 = Reservation.create!(user_id: demo_user.id, num_guests:1, room_id: room7.id, check_in: Time.new(2022,9,1).to_date, check_out: Time.new(2022,9,3).to_date)
+reservation8 = Reservation.create!(user_id: demo_user.id, num_guests:1, room_id: room8.id, check_in: Time.new(2022,9,1).to_date, check_out: Time.new(2022,9,3).to_date)
+reservation9 = Reservation.create!(user_id: demo_user.id, num_guests:1, room_id: room9.id, check_in: Time.new(2022,9,1).to_date, check_out: Time.new(2022,9,3).to_date)
+reservation10 = Reservation.create!(user_id: demo_user.id, num_guests:1, room_id: room10.id, check_in: Time.new(2022,9,1).to_date, check_out: Time.new(2022,9,3).to_date)
+reservation11 = Reservation.create!(user_id: demo_user.id, num_guests:1, room_id: room11.id, check_in: Time.new(2022,9,1).to_date, check_out: Time.new(2022,9,3).to_date)

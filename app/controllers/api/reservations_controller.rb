@@ -13,11 +13,6 @@ class Api::ReservationsController < ApplicationController
 
     def create
         @reservation = Reservation.new(reservation_params)
-        @reservation.check_in = DateTime.strptime(reservation_params[:check_in], '%m/%d/%Y')
-        @reservation.check_out = DateTime.strptime(reservation_params[:check_out], '%m/%d/%Y')
-
-        @reservation.user_id = current_user.id
-        @reservation.room_id = params[:room_id]
 
 
         if @reservation.save

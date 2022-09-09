@@ -8,6 +8,7 @@ import { MdOutlineDryCleaning, MdOutlineLocalLaundryService, MdOutlineMicrowave,
 import Reservation from './reservation';
 
 const RoomDetail = ({ room, openModal, createReservation, currentRoom, currentUser }) => {
+  debugger
   return (
     <div className='room-detail-all'>
       <div className='room-detail-title'>
@@ -124,7 +125,7 @@ const RoomDetail = ({ room, openModal, createReservation, currentRoom, currentUs
 
 
         <div className='room-detail-right-half'>
-          <Reservation openModal={openModal} createReservation={createReservation} currentUser={currentUser} room={currentRoom}  />
+          { currentRoom ? <Reservation openModal={openModal} createReservation={createReservation} currentUser={currentUser} room={currentRoom} reservations={currentRoom.reservations}/> : null}
         </div>
       </div>
     </div>

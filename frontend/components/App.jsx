@@ -1,5 +1,5 @@
 import React from "react";
-import NavBarContainer from './nav_bar/nav_bar_container';
+import NavBar2Container from './nav_bar2/nav_bar2_container';
 import Splash from "./splash/splash";
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch, Route } from 'react-router-dom';
@@ -16,7 +16,7 @@ const App = () => (
       <AuthRoute exact path="/" component={Splash} />
       <Route exact path="/rooms" component={SearchContainer}/>
       <Route exact path="/rooms/:roomId" component={RoomShowContainer} />
-      <Route exact path="/profile" />
+      <Route exact path="/profile" component={NavBar2Container}/>
     </Switch>
     
     <footer>
