@@ -232,10 +232,6 @@ class Reservation extends React.Component {
                     disabledDates={disabledDates}
 
 
-
-                    // disabledDay={this.handleDisable}
-                    // focusedRange={[this.state.startDate, this.state.endDate]}
-
                     
                 />
             </div>
