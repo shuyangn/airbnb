@@ -6,6 +6,7 @@ import { Switch, Route } from 'react-router-dom';
 import Footer from './footer/footer';
 import SearchContainer from './rooms/search_container';
 import RoomShowContainer from './rooms_show/room_show_container';
+import profileContainer from "./profile/profile_container";
 
 const App = () => (
   <div>
@@ -16,7 +17,7 @@ const App = () => (
       <AuthRoute exact path="/" component={Splash} />
       <Route exact path="/rooms" component={SearchContainer}/>
       <Route exact path="/rooms/:roomId" component={RoomShowContainer} />
-      <Route exact path="/profile" component={NavBar2Container}/>
+      <Route exact path="/profile" component={profileContainer}/>
     </Switch>
     
     <footer>

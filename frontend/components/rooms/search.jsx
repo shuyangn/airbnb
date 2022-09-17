@@ -5,7 +5,7 @@ import NavBar2Container from "../nav_bar2/nav_bar2_container";
 import ModalContainer from '../modal/modal';
 import FakeFilter from '../fake_filter/fake_filter';
 
-const Search = ({ rooms, maxGuest, updateFilter }) => (
+const Search = ({ rooms, maxGuest, updateFilter, fetchReservations }) => (
   <div className="user-pane">
         <NavBar2Container 
                 maxGuest={maxGuest}
@@ -14,7 +14,7 @@ const Search = ({ rooms, maxGuest, updateFilter }) => (
         <ModalContainer />
         <FakeFilter />
     <div className="rooms-sidebyside">
-      <RoomIndex rooms={rooms} updateFilter={updateFilter} />
+      <RoomIndex rooms={rooms} updateFilter={updateFilter} fetchReservations={fetchReservations}/>
     </div>
     <div className="techs-info-container"  id='techs-info-col'>
       <div className="techs-info">

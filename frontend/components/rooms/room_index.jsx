@@ -10,7 +10,10 @@ class RoomIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.updateFilter();
+    this.props.updateFilter();  //.then(this.setState({loading: false}))
+    if (this.props.currentUser) {
+      this.props.fetchReservations(this.props.currentUser.id);
+    }
   }
 
   render() {

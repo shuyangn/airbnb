@@ -103,7 +103,7 @@ class Signup extends React.Component {
           pwCallback()
         } else {
           setTimeout(() => {
-            this.props.login(this.state)
+            this.props.login(this.state).then(data => {this.props.fetchReservations(data.user.id)})
               .then(this.closeModal);
           }, 500);
         }

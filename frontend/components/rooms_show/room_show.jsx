@@ -16,6 +16,9 @@ class RoomShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchRoom(this.props.roomId);
+    if (this.props.currentUser) {
+      this.props.fetchReservations(this.props.currentUser.id);
+    }
   }
 
 

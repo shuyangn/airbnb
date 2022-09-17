@@ -12,7 +12,7 @@ const navBar = (props) => {
 
 const display = currentUser ? (
     <div className='welcome-info'>
-      <h3>Welcome {currentUser.username}!</h3>
+      <a href="#/profile"><h3>Welcome {currentUser.username}!</h3></a>
       <div className="logout-btn" onClick={logout}>Log out</div>
     </div>
   ) : (

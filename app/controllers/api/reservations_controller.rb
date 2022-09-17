@@ -2,7 +2,8 @@ class Api::ReservationsController < ApplicationController
 
     def index
         @reservations = User.find(params[:user_id]).reservations
-        @rooms = @reservations.pluck(:room_id)
+        @rooms = Room.all
+        # params[:user_id] ? @reservations = Reservation.where(user_id: params[:user_id].to_i) : Reservation.all
         render :index
     end
 

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { updateFilter } from '../../actions/filter_actions';
 import { asArray  } from '../../reducers/selectors';
 import Search from './search';
+import { fetchReservations } from '../../actions/reservation_actions';
 
 const mapStateToProps = state => ({
   rooms: Object.values(state.entities.rooms),
@@ -10,7 +11,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
+  updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
+  fetchReservations: (userId) => dispatch(fetchReservations(userId))
 });
 
 export default connect(
