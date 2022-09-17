@@ -163,7 +163,6 @@ class Reservation extends React.Component {
     }
 
     render() {
-        debugger
         let disabledDates = [];
             if (this.props.reservations){
             Object.values(this.props.reservations).forEach(reservation => {
@@ -205,7 +204,7 @@ class Reservation extends React.Component {
                     </label>
                     <label className='property-reservation-input-label'>Number of guests:  
                             <select className='property-reservation-input' onChange={this.changeGuest} value={this.state.guests}>
-                            {[1,2,3,4].map(i => {
+                            {Array.from({length: this.props.room.max_guests}, (_, i) => i + 1).map(i => {
                                 return <option key={i} value={i}>{i}</option>
                             })}
                         </select>

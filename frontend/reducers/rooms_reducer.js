@@ -8,7 +8,6 @@ const roomsReducer = (state = {}, action) => {
       case RECEIVE_ROOMS:
         return action.rooms;
       case RECEIVE_ROOM:
-        // debugger
         nextState[action.room.id] = action.room;
         return nextState;
       case RECEIVE_RESERVATIONS:

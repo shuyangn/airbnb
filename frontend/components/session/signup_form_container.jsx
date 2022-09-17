@@ -3,6 +3,8 @@ import React from 'react';
 import { login, signup, clearErrors } from '../../actions/session_actions';
 import Signup from './signup';
 import { openModal, closeModal } from '../../actions/modal_actions' ;
+import { fetchReservations } from '../../actions/reservation_actions';
+
 
 const mapStateToProps = ({ errors }) => {
   return {
@@ -17,6 +19,7 @@ const mapDispatchToProps = dispatch => {
     closeModal: () => dispatch(closeModal()),
     login: (user) => dispatch(login(user)),
     clearErrors: () => dispatch(clearErrors()),
+    fetchReservations: (userId) => dispatch(fetchReservations(userId)),
     otherForm: (
       <p> Already have an account? &nbsp;&nbsp;
         <a className="other-form-link" onClick={() => dispatch(openModal('login'))}>

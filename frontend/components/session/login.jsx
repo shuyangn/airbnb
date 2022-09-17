@@ -25,7 +25,7 @@ class Login extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.login(this.state);
+    this.props.login(this.state).then(data => {this.props.fetchReservations(data.user.id)})
   }
 
   renderErrors() {
@@ -82,7 +82,7 @@ class Login extends React.Component {
           pwCallback()
         } else {
           setTimeout(() => {
-            this.props.login(this.state)
+            this.props.login(this.state).then(data => {this.props.fetchReservations(data.user.id)})
               .then(this.closeModal);
           }, 500);
         }

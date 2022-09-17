@@ -8,7 +8,6 @@ import { MdOutlineDryCleaning, MdOutlineLocalLaundryService, MdOutlineMicrowave,
 import Reservation from './reservation';
 
 const RoomDetail = ({ room, openModal, createReservation, currentRoom, currentUser }) => {
-  debugger
   return (
     <div className='room-detail-all'>
       <div className='room-detail-title'>
