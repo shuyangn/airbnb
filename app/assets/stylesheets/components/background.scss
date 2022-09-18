@@ -26,3 +26,47 @@
     margin: 0 10px 0 5px;
     flex-direction: row;
   }
+
+
+  .splash-entry-button {
+    border-radius: 10px;
+    width: 12%;
+    height: 7%;
+    transition: 0.5s;
+    position: absolute;
+    left: 44%;
+    top: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.splash-entry-button:hover {
+  transition: 0.5s;
+  box-shadow: rgba(255, 255, 255, 0.367) 0px 34px 35px, rgba(255, 255, 255, 0.367) 0px -12px 30px, rgba(255, 255, 255, 0.367) 0px 4px 6px, rgba(255, 255, 255, 0.367) 0px 12px 13px, rgba(255, 255, 255, 0.367) 0px -3px 5px;
+}
+
+  .splash-entry-button p{
+    font-size: 18px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    position: absolute;
+    left: 9%;
+    top: 30%;
+    font-weight: 700;
+    background: linear-gradient(90deg, #6f019c 0%, #c6017e 135.12%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+
+  .quote {
+    position: absolute;
+    width: 100%;
+    top: 25%;
+    color: white;
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    font-family: Dancing Script;
+
+}
