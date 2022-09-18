@@ -28,7 +28,7 @@ class ReservationItem extends React.Component {
         let startDateString = (startDate.getMonth() + 1).toString() + '/' + startDate.getDate().toString() + '/' + startDate.getFullYear();
         let endDateString = (endDate.getMonth() + 1).toString() + '/' + endDate.getDate().toString() + '/' + endDate.getFullYear();
         const {room, reservation, status} = this.props;
-        debugger
+
         return (
             
                 <div onClick={this.onClick} className='trip-container'>
