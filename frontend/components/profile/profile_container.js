@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import {fetchReservations, removeReservation} from '../../actions/reservation_actions'
 
 const mSTP = (state) => {
-    debugger
     return {
         reservations: state.entities.reservations,
         currentUser: state.session.currentUser,

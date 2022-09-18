@@ -22,7 +22,7 @@ class Reservation extends React.Component {
         this.handleSelect = this.handleSelect.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.changeGuest = this.changeGuest.bind(this);
-        this.bookingMenu = this.bookingMenu.bind(this);
+        this.reservationConfirm = this.reservationConfirm.bind(this);
         this.handleConfirm = this.handleConfirm.bind(this);
         this.handleBackClick = this.handleBackClick.bind(this);
     }
@@ -102,57 +102,55 @@ class Reservation extends React.Component {
         return dates; 
     }
 
-    bookingMenu() {
+    reservationConfirm() {
         const {startDate, endDate, guests,duration} = this.state;
         if (this.state.booking) {
             return (
-                <div className='booking-menu'>
-                    <div className='booking-menu-top'>
-                        <p className='booking-top-price'>${this.props.room.price} / night</p>
-                        <p onClick={this.handleBackClick} className='booking-menu-back-button'>Back</p>
+                <div className='reservation-container'>
+                    <div className='reservation-price-back'>
+                        <p>${this.props.room.price} <span> night</span></p>
+                        <p onClick={this.handleBackClick} className='reservation-back'>Back</p>
                     </div>
                     <div>
-                        <div className='booking-details'>
-                            <div className='booking-dates'>
-                                    <div className='booking-date'>
+                        <div className='reservation-form'>
+                            <div className='reservation-input-label-inout'>
+                                    <div className='reservation-input-check'>
                                         <label>CHECK-IN</label>
                                         <p>{startDate.getMonth() + 1}/{startDate.getDate()}/{startDate.getFullYear()}</p> 
                                     </div>
-                                    <div className='booking-date'>
+                                    <div className='reservation-input-check'>
                                         <label >CHECK-OUT</label>
                                         <p>{endDate.getMonth() + 1}/{endDate.getDate()}/{endDate.getFullYear()}</p>
                                        
                                     </div>
                             </div>
-                            <div className='booking-guests'>
+                            <div className='reservation-guests'>
                                 <label>GUESTS</label>
                                 <p>{guests}{guests > 1 ? ' guests' : ' guest'}</p>
                                 
                             </div>
+                            <div className='reservation-pricing'>
+                                <div className='reservation-pricing-item'>
+                                    <p>${this.props.room.price} x {duration} nights</p>
+                                    <p>${parseInt(this.props.room.price)*parseInt(duration)}</p>
+                                </div>
+                                <div className='reservation-pricing-item'>
+                                    <p>Cleaning fee</p>
+                                    <p>$10</p>
+                                </div>
+                                <div className='reservation-pricing-item'>
+                                    <p>Service fee</p>
+                                    <p>$20</p>
+                                </div>
+                                <div className='reservation-price-total'>
+                                    <p>Total</p>
+                                    <p>${10 + 20 + parseInt(this.props.room.price)*parseInt(duration)}</p>
+                                </div>
                             </div>
-
-                        <button onClick={this.handleConfirm} className='booking-menu-reserve-button'>Reserve</button>
-                        <div className='booking-pricing'>
-                            <div>
-                                <p>${this.props.room.price} x {duration} nights</p>
-                                <p>${parseInt(this.props.room.price)*parseInt(duration)}</p>
-                            </div>
-                            <div>
-                                <p>$5 x {guests}{guests > 1 ? ' guests' : ' guest'}</p>
-                                <p>${guests * 5}</p>
-                            </div>
-                            <div>
-                                <p>Cleaning fee</p>
-                                <p>$10</p>
-                            </div>
-                            <div>
-                                <p>Service fee</p>
-                                <p>$20</p>
-                            </div>
-                            <div className='pricing-total'>
-                                <p>Total</p>
-                                <p>${10 + 20 + parseInt(this.props.room.price)*parseInt(duration) + parseInt(guests)*5}</p>
-                            </div>
+                            
+                            <label className='reservation-input-label-submit'>
+                            <button onClick={this.handleConfirm} className='reservation-submit'>Reserve</button>
+                            </label>
                         </div>
                     </div>
                 </div>
@@ -186,34 +184,38 @@ class Reservation extends React.Component {
 
     if (this.state.booking){
         return(
-            this.bookingMenu()
+            this.reservationConfirm()
         )
     } else {
         return (
             <div className='reservation-container'>
-                <h1 className='create-reservation-header'>Book a stay today!</h1>
-                <form onSubmit={this.handleSubmit} className='property-reservation-form'>
-                    <label className='property-reservation-input-label'>Check-in date:
-                            <input className='property-reservation-input' disabled type="text" value={!initialState ? `${startDate.getMonth()+1}/${startDate.getDate()}/${startDate.getFullYear()} ` : ''} />
+                <p>${this.props.room.price} <span> night </span></p>
+                <form onSubmit={this.handleSubmit} className='reservation-form'>
+                    <div className='reservation-input-label-inout'>
+                    <div className='reservation-input-check'>
+                    <label>CHECK-IN</label>
+                    <input disabled type="text" value={!initialState ? `${startDate.getMonth()+1}/${startDate.getDate()}/${startDate.getFullYear()} ` : ''} />
+                    </div>
+                    <div className='reservation-input-check'>
+                    <label>CHECK-OUT</label>
+                    <input disabled type="text" value={!initialState ? `${endDate.getMonth()+1}/${endDate.getDate()}/${endDate.getFullYear()} ` : ''} />
+                    </div>
+                    </div>
+
+                    <label className='reservation-input-label'>Duration: 
+                        <input disabled type="text" value={this.state.duration + ' Nights'} />
                     </label>
-                    <label className='property-reservation-input-label'>Check-out date:
-                            <input className='property-reservation-input' disabled type="text" value={!initialState ? `${endDate.getMonth()+1}/${endDate.getDate()}/${endDate.getFullYear()} ` : ''} />
-                    </label>
-                    <label className='property-reservation-input-label'>Duration: 
-                        <input className='property-reservation-input' disabled type="text" value={this.state.duration + ' Nights'} />
-                    </label>
-                    <label className='property-reservation-input-label'>Number of guests:  
-                            <select className='property-reservation-input' onChange={this.changeGuest} value={this.state.guests}>
+                    <label className='reservation-input-label'>Number of guests:  
+                            <select onChange={this.changeGuest} value={this.state.guests}>
                             {Array.from({length: this.props.room.max_guests}, (_, i) => i + 1).map(i => {
                                 return <option key={i} value={i}>{i}</option>
                             })}
                         </select>
                     </label>
-                    <label className='property-reservation-input-label-submit'>
-                        <input className='property-reservation-submit' type="submit" value='Book Today!' disabled={endDate==startDate ? true : false} />
+                    <label className='reservation-input-label-submit'>
+                        <input className='reservation-submit' type="submit" value='Book Today' disabled={endDate==startDate ? true : false} />
                     </label>
-                    {this.state.created ? <p className='booking-confirmation'>Your booking has been confirmed, we can't wait to see you!</p> : null }
-                </form>
+                
                 <DateRange
                     ranges={[selectionRange]}
                     onChange={this.handleSelect}
@@ -229,10 +231,8 @@ class Reservation extends React.Component {
                     startDatePlaceHolderText='Check In'
                     endDatePlaceHolderText='Check Out'
                     disabledDates={disabledDates}
-
-
-                    
                 />
+                </form>
             </div>
             )
         }

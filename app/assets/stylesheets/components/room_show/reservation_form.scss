@@ -1,0 +1,126 @@
+.reservation-container {
+    border: 1px solid rgba(226, 226, 226, 0.811);
+    margin-top: 10%;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 15px;
+    box-shadow: 0px 2px 7px rgb(230, 230, 230);
+    padding-top: 30px;
+    top: 95px;
+    position: sticky;
+}
+
+.reservation-container p{
+    font-weight: 800;
+    font-size: 22px;
+}
+.reservation-container p span{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 18px;
+}
+
+.reservation-input-label-inout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.reservation-input-check {
+    width: 50%;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+}
+
+
+.reservation-input-check input {
+    width: 100%;
+}
+
+.reservation-input-label select{
+    width: 30%;
+}
+
+.reservation-input-label-submit {
+    display: flex;
+    justify-content: center;
+}
+.reservation-submit {
+    width: 100%;
+    background-color: #FF385C !important;
+    padding: 1rem;
+    color: #fff !important;
+    font-size: 1rem !important;
+    font-weight: 600;
+    border-color: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reservation-price-back {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.reservation-back {
+    // text-align: center;
+    padding: 0 8px 0 8px;
+    border-radius: 10%;
+    background-color: #f7f7f7;
+    cursor: pointer;
+    color:rgba(97, 97, 97, 0.87);
+}
+
+.reservation-back:hover {
+    background-color: #e5e4e4;
+    transition: 0.2s;
+}
+
+.reservation-pricing {
+    display: flex;
+    flex-direction: column;
+}
+
+.reservation-pricing-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.reservation-pricing-item p {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.reservation-price-total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-decoration: underline;
+}
+
+.reservation-input-check p{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.reservation-guests p{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.reservation-guests {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

@@ -4,7 +4,6 @@ import ReservationItem from './reservation_item';
 
 class Profile extends React.Component {
     constructor(props) {
-        debugger
         super(props)
         this.state = {
             view: 'upcoming'
@@ -81,7 +80,7 @@ class Profile extends React.Component {
                 </nav>
                 <div className='trips-index-container'>
                     {filtered_reservations.map((reservation, idx) => {
-                        debugger
+                    
                         return <ReservationItem status={view} removeReservation={removeReservation} key={reservation.id} reservation={reservation} room={rooms[reservation.room_id]} />
                     })}
                 </div>
