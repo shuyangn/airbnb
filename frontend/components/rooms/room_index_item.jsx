@@ -17,7 +17,6 @@ class IndexItem extends React.Component {
   render() {
     if (this.props.room){
       const { country, city, price, image_urls} = this.props.room;
-      
       return (
         <div className="room-index-item" onClick={this.handleClick} >
           <div className='index-item-image'>

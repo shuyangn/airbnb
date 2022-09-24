@@ -31,7 +31,7 @@ class RoomIndex extends React.Component {
     <div className="index_page_all_rooms">
       {rooms.map(room => (
         <RoomIndexItem
-          room={room}
+        room={room ? room : ''}
           key={room.id}
         />
       ))}

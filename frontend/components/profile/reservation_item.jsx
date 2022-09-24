@@ -31,16 +31,22 @@ class ReservationItem extends React.Component {
 
         return (
             
-                <div onClick={this.onClick} className='trip-container'>
-                    <div className='trip-selection'>
-                        <img src={room.image_urls ? room.image_urls[0] : ''} />
-                        <h1>{room.title}</h1>
-                        <div className='trip-container-subs'>
-                            <p>{startDateString} - {endDateString}</p>
-                            <p>{reservation.num_guests ? reservation.num_guests + (reservation.num_guests > 1 ? ' guests': ' guest') : 'No guest restriction'}</p>
+                <div onClick={this.onClick} className='reservation-item-container'>
+                    <div className='reservation-item'>
+                        <div className='reservation-item-img'>
+                            <img src={window.background}/>
+                            {/* {room.image_urls ? room.image_urls[0] : ''} */}
+                        </div>
+                        <div className='reservation-container-subs'>
+                            <p className='reservation-container-subs-title'>{room.title}</p>
+                            <p className='reservation-container-subs-date'>{startDateString} - {endDateString}</p>
+                            <p className='reservation-container-subs-guestnum'>{reservation.num_guests ? reservation.num_guests + (reservation.num_guests > 1 ? ' guests': ' guest') : 'No guest restriction'}</p>
+                        </div>
+                        <div className='reservation-delete-button-div'>
+                        {status == 'upcoming' ? <button className='reservation-delete-button' onClick={this.handleDelete}>Cancel</button> : <button className='reservation-delete-button'>Write Review</button> }
                         </div>
                     </div>
-                    {status == 'upcoming' ? <button className='trip-index-delete' onClick={this.handleDelete}>Cancel</button> : null }
+                    
                     
                 </div>
             
