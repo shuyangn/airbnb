@@ -15,6 +15,7 @@
 
     <script type="text/javascript">
       window.donald_duck = "<%= image_url('donald_duck.jpg') %>";
+      window.background = "<%= image_url('background.jpg') %>";
     </script>
 
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['MAPS_API_KEY']}" %>

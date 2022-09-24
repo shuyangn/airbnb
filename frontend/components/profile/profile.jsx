@@ -1,6 +1,6 @@
 import React from 'react';
 import ReservationItem from './reservation_item';
-
+import NavBar2Container from "../nav_bar2/nav_bar2_container";
 
 class Profile extends React.Component {
     constructor(props) {
@@ -52,16 +52,16 @@ class Profile extends React.Component {
 
         if (filtered_reservations.length < 1) {
             return (
-                <div className='trips-page'>
-                    <nav className='trips-header-nav'>
+                <div className='profile'>
+                    <div className='profile-nav'>
                         <h1>Reservations</h1>
-                        <button onClick={this.onButtonClick} className='trips-header-nav-button'>Explore more</button>
-                    </nav>
-                    <nav className='trips-nav'>
-                        <button className={`trips-nav-button ${upcoming_class}`} onClick={this.onHeaderClick('upcoming')}>Upcoming</button>
-                        <button className={`trips-nav-button ${past_class}`} onClick={this.onHeaderClick('past')}>Past</button>
-                    </nav>
-                    <p className='no-trips-text'>{this.state.view == 'upcoming' ?'No trips planned yet!' : "No previous trips, let's book your next adventure!"}</p>
+                        <button onClick={this.onButtonClick} className='profile-nav-explore'>Explore more</button>
+                    </div>
+                    <div className='profile-nav-two'>
+                        <button className={`profile-nav-button ${upcoming_class}`} onClick={this.onHeaderClick('upcoming')}>Upcoming</button>
+                        <button className={`profile-nav-button ${past_class}`} onClick={this.onHeaderClick('past')}>Past</button>
+                    </div>
+                    <p className='no-reservation'>{this.state.view == 'upcoming' ?'No trips planned yet!' : "No previous trips, let's book your next adventure!"}</p>
                 </div>
             )
         }
@@ -69,22 +69,25 @@ class Profile extends React.Component {
         const{ removeReservation, rooms } = this.props;
         const { view } = this.state;
         return (
-            <div className='trips-page'>
-                <nav className='trips-header-nav'>
-                    <h1>Reservations</h1>
-                    <button onClick={this.onButtonClick} className='trips-header-nav-button'>Explore more</button>
-                </nav>
-                <nav className='trips-nav'>
-                    <button className={`trips-nav-button ${upcoming_class}`} onClick={this.onHeaderClick('upcoming')}>Upcoming</button>
-                    <button className={`trips-nav-button ${past_class}`} onClick={this.onHeaderClick('past')}>Past</button>
-                </nav>
-                <div className='trips-index-container'>
-                    {filtered_reservations.map((reservation, idx) => {
-                    
-                        return <ReservationItem status={view} removeReservation={removeReservation} key={reservation.id} reservation={reservation} room={rooms[reservation.room_id]} />
-                    })}
-                </div>
+            <div>
+                <NavBar2Container />
+                <div className='profile'>
+                    <div className='profile-nav'>
+                        <h1>Reservations</h1>
+                        <button onClick={this.onButtonClick} className='profile-nav-explore'><p>Explore more</p></button>
+                    </div>
+                    <div className='profile-nav-two'>
+                        <button className={'profile-nav-button'} onClick={this.onHeaderClick('upcoming')}>Upcoming</button>
+                        <button className={'profile-nav-button'} onClick={this.onHeaderClick('past')}>Past</button>
+                    </div>
+                    <div className='profile-reservations-container'>
+                        {filtered_reservations.map((reservation, idx) => {
+                        
+                            return <ReservationItem status={view} removeReservation={removeReservation} key={reservation.id} reservation={reservation} room={rooms[reservation.room_id]} />
+                        })}
+                    </div>
 
+                </div>
             </div>
         )
     }
