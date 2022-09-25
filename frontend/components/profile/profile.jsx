@@ -70,7 +70,6 @@ class Profile extends React.Component {
         const { view } = this.state;
         return (
             <div>
-                <NavBar2Container />
                 <div className='profile'>
                     <div className='profile-nav'>
                         <h1>Reservations</h1>
