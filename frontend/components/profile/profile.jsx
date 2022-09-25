@@ -16,6 +16,10 @@ class Profile extends React.Component {
         this.props.fetchReservations(this.props.currentUser.id)
     }
 
+    componentWillMount() {
+        this.props.fetchReservations(this.props.currentUser.id)
+    }
+
 
     onHeaderClick(field) {
         return e => {
