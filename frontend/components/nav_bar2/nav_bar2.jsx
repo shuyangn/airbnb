@@ -14,9 +14,11 @@ const NavBar2 = (props) => {
     };
   };
 
+
   const display = currentUser ? (
     <div className='welcome-info2'>
-      <a href="#/profile"><h3>Welcome {currentUser.username}!</h3></a>
+      <h3>Welcome {currentUser.username}!</h3>
+      <a href="#/profile">Profile</a>
       <div className="logout-btn2" onClick={logout}>Log out</div>
     </div>
   ) : (
